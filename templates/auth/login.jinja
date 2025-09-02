@@ -1,0 +1,37 @@
+{% extends 'base.jinja' %}
+
+{% block head %}
+  <title>Accedi - Guerra del Faedo</title>
+  <link rel="stylesheet" href="/static/styles/login.css">
+{% endblock %}
+
+{% block content %}
+  <div class="card" id="login-card">
+    <form action="/auth/login/" method="post" class="form" id="login-form">
+      <h2>Accedi</h2>
+
+      {% if wrong_credentials %}
+        <div id="wrong-credentials">
+          Username o password errati
+        </div>
+      {% endif %}
+
+      {{ csrf_input }}
+      <div>
+        <label for="username">Username</label>
+        <div>
+          <input type="text" id="username" name="username" required>
+        </div>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <div>
+          <input type="password" id="password" name="password" required>
+        </div>
+      </div>
+      <div class="submit-buttons">
+        <button type="submit" class="submit-button">Accedi!</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
