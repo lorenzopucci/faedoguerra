@@ -1,5 +1,5 @@
 .env
 ./faedoguerra_env/
 **/__pycache__/
-./faedoguerra_app/migrations/*
-!./faedoguerra_app/migrations/__init__.py
+faedoguerra_app/migrations/*
+!faedoguerra_app/migrations/__init__.py

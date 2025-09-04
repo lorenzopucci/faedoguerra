@@ -1,0 +1,31 @@
+{% extends "base.jinja" %}
+
+{% block head %}
+  <title>{{user.get_username()}} - Guerra del Faedo</title>
+
+  <script src="/static/scripts/user.js"></script>
+  <link rel="stylesheet" href="/static/styles/user.css">
+{% endblock %}
+
+{% block content %}
+  <div class="full-width-card">
+  <h2>I tuoi dati</h2>
+
+    <div class="data-grid">
+      <div>Username</div>
+      <div>{{user.get_username()}}</div>
+
+      <div>Nome</div>
+      <div>{{user.first_name}}</div>
+
+      <div>Cognome</div>
+      <div>{{user.last_name}}</div>
+
+      <div>Scuola</div>
+      <div>{{user.player.get_university_display()}}</div>
+    </div>
+  </div>
+  <button id="logout-button" class="submit-button" onclick="logout();">
+    Esci
+  </button>
+{% endblock %}

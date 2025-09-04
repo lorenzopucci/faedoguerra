@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 def auth_login(request):
@@ -15,8 +15,13 @@ def auth_login(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect(request.GET.get('next', '/'))
         else:
             return render(request, 'auth/login.jinja', {
                 'wrong_credentials': True
             })
+
+
+def auth_logout(request):
+    logout(request)
+    return redirect('/')

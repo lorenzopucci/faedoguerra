@@ -29,10 +29,18 @@
           <span>Informazioni</span>
           <img src="/static/icons/about.svg" height="22">
         </span>
-        <span onclick="redirect_to_login();">
-          <span>Accedi</span>
-          <img src="/static/icons/login.svg" height="22">
-        </span>
+
+        {% if user.is_authenticated %}
+          <span onclick="redirect_to_user();">
+            <span>{{user.get_username()}}</span>
+            <img src="/static/icons/user.svg" height="22">
+          </span>
+        {% else %}
+          <span onclick="redirect_to_login();">
+            <span>Accedi</span>
+            <img src="/static/icons/login.svg" height="22">
+          </span>
+        {% endif %}
       </div>
     </div>
   </header>

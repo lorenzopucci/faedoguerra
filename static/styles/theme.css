@@ -17,7 +17,11 @@ body {
 
 #page-wrapper {
     width: min(95%, 1000px);
+    height: fit-content;
     margin: 120px auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -60,8 +64,10 @@ a {
     width: 100%;
 }
 
-.full-width-card > h2 {
-    margin-bottom: 10px;
+.full-width-card > h2,
+.form > h2 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 
@@ -92,12 +98,6 @@ a {
 }
 
 /*********************************** Forms ************************************/
-
-.form > h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 26px;
-}
 
 .form > div {
     display: flex;
@@ -141,4 +141,30 @@ a {
     height: 25px;
     background-color: white;
     box-sizing: border-box;
+}
+
+/*********************************** Tables ***********************************/
+
+.data-grid {
+    display: grid;
+    grid-template-columns: max-content auto;
+}
+
+.data-grid > div {
+    padding: 5px 10px;
+}
+
+.data-grid > div:nth-child(2n + 1) {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.data-grid > div:nth-child(2n) {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.data-grid > div:nth-child(4n + 1),
+.data-grid > div:nth-child(4n + 2) {
+    background-color: rgb(240, 240, 240);
 }

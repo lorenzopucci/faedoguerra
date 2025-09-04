@@ -11,5 +11,9 @@ function redirect_to_about() {
 }
 
 function redirect_to_login() {
-    window.location.href = '/auth/login';
+    window.location.href = `/auth/login?next=${window.location.pathname}`;
+}
+
+function redirect_to_user() {
+    window.location.href = `/user`;
 }

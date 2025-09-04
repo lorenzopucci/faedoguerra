@@ -7,7 +7,7 @@
 
 {% block content %}
   <div class="card" id="login-card">
-    <form action="/auth/login/" method="post" class="form" id="login-form">
+    <form action="{{request.get_full_path()}}" method="post" class="form" id="login-form">
       <h2>Accedi</h2>
 
       {% if wrong_credentials %}
