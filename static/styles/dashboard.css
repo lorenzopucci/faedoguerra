@@ -1,0 +1,51 @@
+#page-wrapper {
+    margin-top: 100px;
+}
+
+svg {
+    width: 60%;
+    height: auto;
+    display: block;
+}
+
+#general-grid svg {
+    width: 90%;
+}
+
+#floor-buttons {
+    margin: 0 auto;
+    display: flex;
+}
+
+#floor-buttons > button {
+    margin: 0 6px;
+}
+
+#svg-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#general-grid {
+    display: grid;
+    grid-template-columns: 30% 35% 35%;
+}
+
+#general-grid > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#general-grid > div > div {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#general-grid > div:first-child > div {
+    margin: auto 0;
+}
+
+#general-grid > div > div > * {
+    margin: 2px auto;
+}

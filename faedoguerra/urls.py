@@ -26,6 +26,7 @@ urlpatterns = [
 
     path('', views.home),
     path('dashboard/', views.dashboard),
+    path('dashboard/<floor>', views.dashboard_floor),
     path('about/', views.about),
     path('user/', views.user),
 ]

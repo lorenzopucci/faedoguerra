@@ -1,0 +1,912 @@
+<svg height="4653" width="3807" viewBox="0 0 3807 4653" preserveAspectRatio xmlns="http://www.w3.org/2000/svg">
+<path d="M 103 145 L 107 141 L 904 139 L 910 138 L 2199 139 L 2205 138 L 3378 139 L 3382 143 L 3387 1577 L 3383 1581 L 3138 1581 L 3134 1577 L 3129 1217 L 1366 1221 L 1362 1217 L 1359 1111 L 1229 1119 L 1224 1137 L 1367 3230 L 1364 3236 L 1392 3343 L 1394 3348 L 1395 3356 L 1407 3402 L 1413 3406 L 1611 3354 L 1614 3348 L 1569 3169 L 1573 3165 L 1676 3138 L 1681 3136 L 1689 3135 L 2098 3031 L 2103 3029 L 2111 3028 L 2307 2978 L 2312 2976 L 2320 2975 L 2674 2885 L 2679 2883 L 2687 2882 L 2883 2832 L 2888 2830 L 2896 2829 L 3514 2672 L 3519 2670 L 3561 2661 L 3569 2669 L 3579 2685 L 3583 2689 L 3586 2694 L 3590 2698 L 3593 2704 L 3597 2708 L 3600 2713 L 3604 2717 L 3607 2723 L 3611 2727 L 3631 2756 L 3635 2760 L 3638 2765 L 3642 2769 L 3645 2775 L 3649 2779 L 3662 2799 L 3666 2803 L 3676 2818 L 3680 2822 L 3683 2827 L 3687 2831 L 3689 2836 L 3690 3249 L 3691 3255 L 3691 3736 L 3687 3740 L 3682 3742 L 3324 3833 L 3319 3835 L 3311 3836 L 2138 4134 L 2133 4136 L 2125 4137 L 1840 4209 L 1836 4205 L 1833 4200 L 1793 4042 L 1787 4040 L 1555 4100 L 1552 4106 L 1575 4196 L 1577 4201 L 1578 4209 L 1592 4262 L 1593 4270 L 1589 4274 L 1193 4375 L 1188 4377 L 1180 4378 L 849 4462 L 844 4464 L 836 4465 L 505 4549 L 500 4551 L 442 4564 L 438 4560 L 436 4550 L 394 3936 L 398 3932 L 567 3890 L 566 3883 L 402 3240 L 400 3235 L 399 3227 L 361 3079 L 352 3077 L 307 3081 L 303 3077 L 300 3066 Z" style="fill:black" id="path02" onclick="on_svg_click('02')" class="svg-path"/>
+<path d="M 123 158 L 641 158 L 670 560 L 591 567 L 579 418 L 575 414 L 555 411 L 142 440 Z" style="fill:white" id="path03" onclick="on_svg_click('03')" class="svg-path"/>
+<path d="M 143 461 L 560 432 L 576 654 L 558 658 L 158 686 L 144 465 Z" style="fill:white" id="path04" onclick="on_svg_click('04')" class="svg-path"/>
+<path d="M 160 707 L 578 678 L 594 899 L 175 928 Z" style="fill:white" id="path05" onclick="on_svg_click('05')" class="svg-path"/>
+<path d="M 176 949 L 596 920 L 611 1135 L 604 1137 L 191 1168 L 177 954 Z" style="fill:white" id="path06" onclick="on_svg_click('06')" class="svg-path"/>
+<path d="M 192 1189 L 610 1158 L 614 1162 L 629 1383 L 624 1386 L 211 1415 L 207 1400 L 193 1191 Z" style="fill:white" id="path07" onclick="on_svg_click('07')" class="svg-path"/>
+<path d="M 209 1436 L 631 1407 L 647 1628 L 226 1654 Z" style="fill:white" id="path08" onclick="on_svg_click('08')" class="svg-path"/>
+<path d="M 225 1675 L 647 1649 L 649 1657 L 664 1864 L 656 1868 L 240 1895 Z" style="fill:white" id="path09" onclick="on_svg_click('09')" class="svg-path"/>
+<path d="M 241 1916 L 662 1889 L 667 1892 L 682 2108 L 256 2137 L 242 1918 Z" style="fill:white" id="path010" onclick="on_svg_click('010')" class="svg-path"/>
+<path d="M 258 2158 L 681 2129 L 684 2140 L 699 2345 L 694 2348 L 272 2378 Z" style="fill:white" id="path011" onclick="on_svg_click('011')" class="svg-path"/>
+<path d="M 274 2399 L 701 2369 L 717 2589 L 288 2617 Z" style="fill:white" id="path012" onclick="on_svg_click('012')" class="svg-path"/>
+<path d="M 290 2638 L 719 2610 L 734 2828 L 309 2854 L 304 2840 Z" style="fill:white" id="path013" onclick="on_svg_click('013')" class="svg-path"/>
+<path d="M 306 2875 L 734 2849 L 736 2856 L 747 3003 L 753 3023 L 754 3031 L 773 3109 L 768 3111 L 412 3200 L 410 3195 L 409 3188 L 378 3066 L 375 3061 L 370 3058 L 358 3057 L 323 3060 L 318 3047 Z" style="fill:white" id="path014" onclick="on_svg_click('014')" class="svg-path"/>
+<path d="M 414 3947 L 735 3870 L 740 3872 L 767 3978 L 768 3985 L 852 4317 L 854 4322 L 855 4330 L 881 4433 L 844 4443 L 839 4445 L 831 4446 L 745 4468 L 740 4470 L 732 4471 L 456 4541 L 454 4530 Z" style="fill:white" id="path015" onclick="on_svg_click('015')" class="svg-path"/>
+<path d="M 417 3221 L 422 3219 L 432 3218 L 774 3132 L 780 3132 L 780 3138 L 786 3161 L 788 3166 L 789 3174 L 806 3243 L 808 3248 L 809 3256 L 820 3300 L 822 3305 L 823 3313 L 840 3382 L 842 3387 L 845 3402 L 842 3407 L 487 3496 L 484 3482 L 482 3477 L 481 3469 L 421 3235 L 419 3230 L 418 3223 Z" style="fill:white" id="path016" onclick="on_svg_click('016')" class="svg-path"/>
+<path d="M 492 3516 L 500 3515 L 795 3442 L 892 3808 L 885 3811 L 591 3882 L 586 3884 L 585 3877 L 493 3518 Z" style="fill:white" id="path017" onclick="on_svg_click('017')" class="svg-path"/>
+<path d="M 592 588 L 671 581 L 674 619 L 678 623 L 2847 625 L 2847 722 L 2441 724 L 2433 723 L 1365 730 L 1361 734 L 1358 781 L 1207 791 L 1202 731 L 1198 727 L 1180 725 L 755 750 L 750 753 L 747 765 L 749 770 L 777 1130 L 754 1131 L 750 1135 L 747 1152 L 825 2344 L 824 2352 L 867 2995 L 869 3000 L 869 3006 L 872 3022 L 874 3027 L 874 3033 L 897 3139 L 899 3144 L 911 3190 L 913 3195 L 949 3328 L 951 3333 L 955 3337 L 964 3340 L 966 3345 L 967 3353 L 1075 3762 L 1076 3770 L 1080 3774 L 1094 3776 L 1378 3706 L 1383 3704 L 1391 3703 L 1469 3684 L 1474 3681 L 1687 3628 L 1692 3626 L 1702 3625 L 1815 3597 L 1820 3595 L 1828 3594 L 1872 3583 L 1877 3581 L 1885 3580 L 1954 3563 L 1959 3561 L 1967 3560 L 2011 3549 L 2016 3547 L 2024 3546 L 2211 3500 L 2216 3498 L 2224 3497 L 2268 3486 L 2273 3484 L 2281 3483 L 2411 3451 L 2416 3449 L 2424 3448 L 2468 3437 L 2473 3435 L 2481 3434 L 2611 3402 L 2616 3400 L 2624 3399 L 2668 3388 L 2673 3386 L 2681 3385 L 2811 3353 L 2816 3351 L 2824 3350 L 2868 3339 L 2873 3337 L 2881 3336 L 3011 3304 L 3016 3302 L 3024 3301 L 3068 3290 L 3073 3288 L 3081 3287 L 3125 3276 L 3130 3274 L 3138 3273 L 3268 3241 L 3273 3239 L 3281 3238 L 3325 3227 L 3330 3225 L 3338 3224 L 3468 3192 L 3473 3190 L 3481 3189 L 3502 3183 L 3505 3178 L 3506 3168 L 3495 3119 L 3504 3118 L 3556 3105 L 3561 3103 L 3569 3102 L 3613 3091 L 3618 3089 L 3671 3077 L 3671 3244 L 3575 3268 L 3570 3270 L 3562 3271 L 2602 3515 L 2597 3517 L 2589 3518 L 2181 3621 L 2173 3624 L 2007 3666 L 2002 3668 L 1994 3669 L 1956 3679 L 1948 3680 L 1943 3682 L 1904 3692 L 1899 3694 L 1891 3695 L 1333 3833 L 1328 3835 L 1320 3836 L 817 3960 L 812 3962 L 789 3967 L 785 3961 L 760 3863 L 910 3827 L 914 3823 L 916 3813 L 852 3572 L 850 3567 L 816 3440 L 820 3435 L 863 3424 L 867 3420 L 869 3410 L 842 3299 L 840 3294 L 839 3286 L 773 3017 L 771 3012 L 768 2996 L 593 591 Z" style="fill:white" id="path018" onclick="on_svg_click('018')" class="svg-path"/>
+<path d="M 662 158 L 898 158 L 924 605 L 694 605 Z" style="fill:white" id="path019" onclick="on_svg_click('019')" class="svg-path"/>
+<path d="M 768 1150 L 1201 1123 L 1205 1142 L 1219 1347 L 783 1377 Z" style="fill:white" id="path020" onclick="on_svg_click('020')" class="svg-path"/>
+<path d="M 770 770 L 1182 746 L 1191 862 L 1176 867 L 779 892 Z" style="fill:white" id="path021" onclick="on_svg_click('021')" class="svg-path"/>
+<path d="M 781 914 L 1207 886 L 1211 882 L 1213 868 L 1209 815 L 1227 811 L 1358 802 L 1358 1092 L 797 1128 Z" style="fill:white" id="path022" onclick="on_svg_click('022')" class="svg-path"/>
+<path d="M 784 1398 L 1221 1368 L 1236 1588 L 798 1617 Z" style="fill:white" id="path023" onclick="on_svg_click('023')" class="svg-path"/>
+<path d="M 791 3988 L 797 3988 L 1017 3933 L 1018 3941 L 1035 4008 L 1037 4013 L 1044 4044 L 1046 4049 L 1047 4057 L 1098 4261 L 1100 4266 L 1107 4297 L 1109 4302 L 1110 4310 L 1125 4369 L 1120 4373 L 1089 4381 L 1084 4383 L 1076 4384 L 907 4427 L 901 4426 L 863 4272 L 861 4267 L 860 4259 L 792 3990 Z" style="fill:white" id="path024" onclick="on_svg_click('024')" class="svg-path"/>
+<path d="M 799 1638 L 1235 1609 L 1238 1625 L 1252 1827 L 817 1856 L 813 1838 L 800 1640 Z" style="fill:white" id="path025" onclick="on_svg_click('025')" class="svg-path"/>
+<path d="M 815 1877 L 1249 1848 L 1254 1860 L 1268 2065 L 1260 2068 L 829 2099 L 816 1885 L 815 1879 Z" style="fill:white" id="path026" onclick="on_svg_click('026')" class="svg-path"/>
+<path d="M 831 2120 L 1266 2089 L 1270 2094 L 1285 2308 L 845 2337 Z" style="fill:white" id="path027" onclick="on_svg_click('027')" class="svg-path"/>
+<path d="M 846 2357 L 1284 2329 L 1287 2343 L 1301 2548 L 1294 2550 L 861 2581 Z" style="fill:white" id="path028" onclick="on_svg_click('028')" class="svg-path"/>
+<path d="M 862 2602 L 1300 2571 L 1303 2577 L 1318 2790 L 876 2819 Z" style="fill:white" id="path029" onclick="on_svg_click('029')" class="svg-path"/>
+<path d="M 877 2840 L 1319 2811 L 1347 3219 L 1342 3221 L 1334 3222 L 1288 3234 L 1283 3236 L 1275 3237 L 971 3316 L 967 3310 L 904 3073 L 902 3068 L 894 3021 L 892 3016 L 892 3010 L 889 2994 L 887 2989 L 878 2842 Z" style="fill:white" id="path030" onclick="on_svg_click('030')" class="svg-path"/>
+<path d="M 918 158 L 1150 158 L 1180 605 L 944 605 Z" style="fill:white" id="path031" onclick="on_svg_click('031')" class="svg-path"/>
+<path d="M 984 3335 L 1094 3753 L 1187 3731 L 1192 3729 L 1200 3728 L 1229 3720 L 1227 3715 L 1122 3305 L 1120 3300 L 1112 3301 L 986 3334 Z" style="fill:white" id="path032" onclick="on_svg_click('032')" class="svg-path"/>
+<path d="M 1037 3928 L 1042 3926 L 1052 3925 L 1140 3903 L 1145 3901 L 1153 3900 L 1720 3760 L 1721 3768 L 1745 3861 L 1747 3866 L 1748 3874 L 1785 4021 L 1778 4022 L 1694 4044 L 1689 4046 L 1681 4047 L 1537 4085 L 1533 4089 L 1530 4100 L 1556 4201 L 1558 4206 L 1559 4214 L 1571 4259 L 1532 4269 L 1527 4271 L 1519 4272 L 1188 4356 L 1183 4358 L 1175 4359 L 1146 4367 L 1145 4359 L 1129 4296 L 1127 4291 L 1120 4260 L 1118 4255 L 1117 4247 L 1075 4079 L 1073 4074 L 1066 4043 L 1064 4038 L 1063 4030 Z" style="fill:white" id="path033" onclick="on_svg_click('033')" class="svg-path"/>
+<path d="M 1140 3294 L 1346 3241 L 1347 3249 L 1373 3348 L 1375 3353 L 1376 3361 L 1390 3417 L 1392 3422 L 1427 3557 L 1431 3561 L 1441 3563 L 1445 3559 L 1447 3547 L 1415 3425 L 1422 3424 L 1619 3372 L 1620 3379 L 1679 3608 L 1251 3714 L 1248 3709 L 1218 3593 L 1216 3588 L 1215 3580 L 1165 3388 L 1163 3383 L 1162 3375 L 1142 3299 Z" style="fill:white" id="path034" onclick="on_svg_click('034')" class="svg-path"/>
+<path d="M 1170 158 L 1482 158 L 1482 605 L 1201 605 Z" style="fill:white" id="path035" onclick="on_svg_click('035')" class="svg-path"/>
+<path d="M 1378 750 L 1719 748 L 1718 1201 L 1378 1202 Z" style="fill:white" id="path036" onclick="on_svg_click('036')" class="svg-path"/>
+<path d="M 1502 158 L 1722 158 L 1722 605 L 1502 605 Z" style="fill:white" id="path037" onclick="on_svg_click('037')" class="svg-path"/>
+<path d="M 1591 3179 L 1599 3178 L 1808 3125 L 1909 3523 L 1911 3528 L 1916 3550 L 1911 3552 L 1728 3596 L 1723 3598 L 1699 3603 L 1698 3595 L 1688 3557 L 1686 3552 L 1685 3544 Z" style="fill:white" id="path038" onclick="on_svg_click('038')" class="svg-path"/>
+<path d="M 1739 748 L 1956 747 L 1953 1201 L 1738 1201 Z" style="fill:white" id="path039" onclick="on_svg_click('039')" class="svg-path"/>
+<path d="M 1740 3756 L 1843 3730 L 1848 3728 L 1856 3727 L 1941 3705 L 1946 3707 L 1947 3715 L 2055 4131 L 2053 4136 L 2046 4137 L 1849 4187 L 1848 4180 L 1806 4014 L 1804 4009 L 1803 4001 L 1767 3860 L 1765 3855 L 1764 3847 L 1741 3758 Z" style="fill:white" id="path040" onclick="on_svg_click('040')" class="svg-path"/>
+<path d="M 1742 158 L 1955 158 L 1955 605 L 1742 605 Z" style="fill:white" id="path041" onclick="on_svg_click('041')" class="svg-path"/>
+<path d="M 1828 3119 L 1835 3118 L 2032 3068 L 2081 3267 L 2083 3272 L 2084 3280 L 2115 3404 L 2117 3409 L 2118 3417 L 2137 3493 L 2132 3497 L 2067 3513 L 2062 3515 L 2054 3516 L 2010 3527 L 2005 3529 L 1997 3530 L 1940 3544 L 1935 3541 L 1916 3463 L 1914 3458 L 1913 3450 L 1829 3121 Z" style="fill:white" id="path042" onclick="on_svg_click('042')" class="svg-path"/>
+<path d="M 1965 3699 L 1970 3697 L 1977 3696 L 2175 3646 L 2179 3652 L 2196 3719 L 2198 3724 L 2199 3732 L 2230 3854 L 2232 3859 L 2233 3867 L 2274 4029 L 2276 4034 L 2277 4042 L 2285 4072 L 2282 4077 L 2133 4115 L 2128 4117 L 2120 4118 L 2082 4128 L 2076 4128 L 2075 4121 Z" style="fill:white" id="path043" onclick="on_svg_click('043')" class="svg-path"/>
+<path d="M 1976 747 L 2192 746 L 2189 1200 L 1973 1201 Z" style="fill:white" id="path044" onclick="on_svg_click('044')" class="svg-path"/>
+<path d="M 1975 158 L 2192 158 L 2192 605 L 1975 605 Z" style="fill:white" id="path045" onclick="on_svg_click('045')" class="svg-path"/>
+<path d="M 2052 3062 L 2061 3061 L 2257 3011 L 2261 3015 L 2369 3437 L 2365 3441 L 2267 3464 L 2262 3466 L 2254 3467 L 2210 3478 L 2205 3480 L 2161 3490 L 2157 3483 L 2111 3298 L 2109 3293 L 2108 3285 L 2068 3125 L 2066 3120 L 2065 3112 L 2053 3064 Z" style="fill:white" id="path046" onclick="on_svg_click('046')" class="svg-path"/>
+<path d="M 2198 3639 L 2206 3638 L 2226 3632 L 2234 3631 L 2399 3589 L 2404 3592 L 2515 4017 L 2508 4020 L 2456 4033 L 2451 4035 L 2443 4036 L 2310 4070 L 2306 4066 L 2296 4028 L 2294 4023 L 2293 4015 L 2285 3984 L 2283 3979 L 2282 3971 L 2252 3853 L 2250 3848 L 2249 3840 L 2218 3718 L 2216 3713 L 2215 3705 L 2200 3646 L 2198 3641 Z" style="fill:white" id="path047" onclick="on_svg_click('047')" class="svg-path"/>
+<path d="M 2212 745 L 2427 744 L 2426 1200 L 2209 1200 Z" style="fill:white" id="path048" onclick="on_svg_click('048')" class="svg-path"/>
+<path d="M 2212 158 L 2427 158 L 2426 605 L 2212 605 Z" style="fill:white" id="path049" onclick="on_svg_click('049')" class="svg-path"/>
+<path d="M 2280 3005 L 2294 3059 L 2296 3064 L 2297 3072 L 2361 3321 L 2363 3326 L 2364 3334 L 2389 3431 L 2397 3433 L 2410 3429 L 2418 3428 L 2462 3417 L 2467 3415 L 2475 3414 L 2519 3403 L 2524 3401 L 2532 3400 L 2597 3384 L 2597 3376 L 2573 3282 L 2571 3277 L 2570 3269 L 2506 3020 L 2504 3015 L 2503 3007 L 2489 2954 L 2483 2953 L 2470 2957 L 2462 2958 L 2282 3004 Z" style="fill:white" id="path050" onclick="on_svg_click('050')" class="svg-path"/>
+<path d="M 2423 3582 L 2430 3581 L 2631 3530 L 2636 3533 L 2747 3960 L 2724 3965 L 2719 3967 L 2711 3968 L 2536 4013 L 2534 4008 L 2533 4000 L 2425 3586 Z" style="fill:white" id="path051" onclick="on_svg_click('051')" class="svg-path"/>
+<path d="M 2447 158 L 2664 158 L 2664 605 L 2446 605 Z" style="fill:white" id="path052" onclick="on_svg_click('052')" class="svg-path"/>
+<path d="M 2447 744 L 2664 743 L 2661 1199 L 2446 1200 Z" style="fill:white" id="path053" onclick="on_svg_click('053')" class="svg-path"/>
+<path d="M 2508 2947 L 2510 2952 L 2511 2959 L 2591 3271 L 2593 3276 L 2594 3284 L 2617 3373 L 2619 3378 L 2662 3368 L 2667 3366 L 2675 3365 L 2719 3354 L 2724 3352 L 2732 3351 L 2825 3328 L 2827 3321 L 2730 2937 L 2728 2932 L 2727 2924 L 2719 2894 L 2711 2895 L 2513 2945 Z" style="fill:white" id="path054" onclick="on_svg_click('054')" class="svg-path"/>
+<path d="M 2655 3523 L 2664 3522 L 2816 3483 L 2821 3481 L 2829 3480 L 2859 3472 L 2864 3475 L 2878 3529 L 2880 3534 L 2881 3542 L 2912 3662 L 2914 3667 L 2915 3675 L 2946 3795 L 2948 3800 L 2949 3808 L 2972 3897 L 2974 3902 L 2779 3951 L 2774 3953 L 2768 3954 L 2766 3949 L 2765 3941 L 2695 3673 L 2693 3668 L 2692 3660 L 2656 3525 Z" style="fill:white" id="path055" onclick="on_svg_click('055')" class="svg-path"/>
+<path d="M 2684 743 L 2847 742 L 2847 775 L 2851 779 L 2990 782 L 2990 1055 L 2919 1055 L 2915 1059 L 2915 1198 L 2681 1199 Z" style="fill:white" id="path056" onclick="on_svg_click('056')" class="svg-path"/>
+<path d="M 2684 158 L 2990 158 L 2990 332 L 2907 332 L 2903 336 L 2900 605 L 2684 605 Z" style="fill:white" id="path057" onclick="on_svg_click('057')" class="svg-path"/>
+<path d="M 2739 2888 L 2747 2887 L 2888 2851 L 2893 2849 L 2901 2848 L 2946 2836 L 2948 2841 L 2949 2848 L 3014 3105 L 3016 3110 L 3017 3118 L 3055 3268 L 3050 3272 L 2924 3303 L 2919 3305 L 2911 3306 L 2867 3317 L 2862 3319 L 2854 3320 L 2848 3322 L 2847 3315 L 2750 2931 L 2748 2926 L 2741 2895 L 2739 2890 Z" style="fill:white" id="path058" onclick="on_svg_click('058')" class="svg-path"/>
+<path d="M 2867 625 L 2906 625 L 2914 626 L 2918 622 L 2921 611 L 2920 352 L 2990 352 L 2990 762 L 2867 762 Z" style="fill:white" id="path059" onclick="on_svg_click('059')" class="svg-path"/>
+<path d="M 2883 3466 L 2932 3656 L 2934 3661 L 2935 3669 L 2966 3789 L 2968 3794 L 2969 3802 L 2994 3897 L 3200 3845 L 3198 3840 L 3197 3832 L 3089 3415 L 3080 3415 L 2888 3464 Z" style="fill:white" id="path060" onclick="on_svg_click('060')" class="svg-path"/>
+<path d="M 2933 1075 L 2990 1075 L 2990 1081 L 2994 1085 L 3367 1088 L 3368 1564 L 3150 1562 L 3148 1204 L 3144 1200 L 2935 1198 Z" style="fill:white" id="path061" onclick="on_svg_click('061')" class="svg-path"/>
+<path d="M 2966 2831 L 2971 2829 L 2979 2828 L 3173 2779 L 3177 2784 L 3181 2800 L 3183 2805 L 3184 2813 L 3284 3215 L 3279 3217 L 3271 3218 L 3124 3254 L 3119 3256 L 3111 3257 L 3076 3266 L 3075 3258 L 2978 2874 L 2976 2869 L 2969 2838 Z" style="fill:white" id="path062" onclick="on_svg_click('062')" class="svg-path"/>
+<path d="M 3010 158 L 3366 158 L 3367 1068 L 3010 1068 Z" style="fill:white" id="path063" onclick="on_svg_click('063')" class="svg-path"/>
+<path d="M 3108 3408 L 3116 3407 L 3194 3387 L 3199 3385 L 3207 3384 L 3317 3356 L 3322 3359 L 3323 3367 L 3429 3781 L 3431 3786 L 3426 3788 L 3420 3788 L 3319 3814 L 3314 3816 L 3306 3817 L 3220 3839 L 3218 3834 L 3217 3826 L 3187 3710 L 3185 3705 L 3184 3697 L 3134 3505 L 3132 3500 L 3131 3492 L 3109 3410 Z" style="fill:white" id="path064" onclick="on_svg_click('064')" class="svg-path"/>
+<path d="M 3196 2772 L 3255 2758 L 3260 2756 L 3268 2755 L 3519 2691 L 3524 2689 L 3532 2688 L 3554 2682 L 3557 2688 L 3561 2692 L 3571 2707 L 3575 2711 L 3578 2716 L 3582 2720 L 3585 2726 L 3589 2730 L 3592 2735 L 3596 2739 L 3599 2745 L 3603 2749 L 3623 2778 L 3627 2782 L 3668 2840 L 3671 3055 L 3612 3069 L 3607 3071 L 3599 3072 L 3555 3083 L 3550 3085 L 3542 3086 L 3479 3102 L 3475 3106 L 3472 3117 L 3482 3161 L 3482 3167 L 3381 3191 L 3376 3193 L 3368 3194 L 3324 3205 L 3319 3207 L 3304 3210 L 3299 3187 L 3297 3182 L 3296 3174 Z" style="fill:white" id="path065" onclick="on_svg_click('065')" class="svg-path"/>
+<path d="M 3340 3349 L 3348 3348 L 3671 3266 L 3672 3725 L 3642 3732 L 3637 3734 L 3629 3735 L 3451 3780 L 3449 3775 L 3448 3767 L 3446 3762 L 3445 3754 L 3342 3353 Z" style="fill:white" id="path066" onclick="on_svg_click('066')" class="svg-path"/>
+
+<text
+    x="1897"
+    y="2351"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text02"
+    class="svg-text"
+    onclick="on_svg_click('02')"
+>
+</text>
+
+<text
+    x="386"
+    y="312"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text03"
+    class="svg-text"
+    onclick="on_svg_click('03')"
+>
+</text>
+
+<text
+    x="359"
+    y="559"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text04"
+    class="svg-text"
+    onclick="on_svg_click('04')"
+>
+</text>
+
+<text
+    x="377"
+    y="803"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text05"
+    class="svg-text"
+    onclick="on_svg_click('05')"
+>
+</text>
+
+<text
+    x="393"
+    y="1044"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text06"
+    class="svg-text"
+    onclick="on_svg_click('06')"
+>
+</text>
+
+<text
+    x="410"
+    y="1286"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text07"
+    class="svg-text"
+    onclick="on_svg_click('07')"
+>
+</text>
+
+<text
+    x="428"
+    y="1530"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text08"
+    class="svg-text"
+    onclick="on_svg_click('08')"
+>
+</text>
+
+<text
+    x="444"
+    y="1772"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text09"
+    class="svg-text"
+    onclick="on_svg_click('09')"
+>
+</text>
+
+<text
+    x="461"
+    y="2013"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text010"
+    class="svg-text"
+    onclick="on_svg_click('010')"
+>
+</text>
+
+<text
+    x="478"
+    y="2253"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text011"
+    class="svg-text"
+    onclick="on_svg_click('011')"
+>
+</text>
+
+<text
+    x="495"
+    y="2493"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text012"
+    class="svg-text"
+    onclick="on_svg_click('012')"
+>
+</text>
+
+<text
+    x="512"
+    y="2732"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text013"
+    class="svg-text"
+    onclick="on_svg_click('013')"
+>
+</text>
+
+<text
+    x="539"
+    y="3024"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text014"
+    class="svg-text"
+    onclick="on_svg_click('014')"
+>
+</text>
+
+<text
+    x="627"
+    y="4225"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text015"
+    class="svg-text"
+    onclick="on_svg_click('015')"
+>
+</text>
+
+<text
+    x="631"
+    y="3314"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text016"
+    class="svg-text"
+    onclick="on_svg_click('016')"
+>
+</text>
+
+<text
+    x="692"
+    y="3663"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text017"
+    class="svg-text"
+    onclick="on_svg_click('017')"
+>
+</text>
+
+<text
+    x="2131"
+    y="2274"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text018"
+    class="svg-text"
+    onclick="on_svg_click('018')"
+>
+</text>
+
+<text
+    x="793"
+    y="381"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text019"
+    class="svg-text"
+    onclick="on_svg_click('019')"
+>
+</text>
+
+<text
+    x="993"
+    y="1250"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text020"
+    class="svg-text"
+    onclick="on_svg_click('020')"
+>
+</text>
+
+<text
+    x="980"
+    y="819"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text021"
+    class="svg-text"
+    onclick="on_svg_click('021')"
+>
+</text>
+
+<text
+    x="1069"
+    y="1000"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text022"
+    class="svg-text"
+    onclick="on_svg_click('022')"
+>
+</text>
+
+<text
+    x="1010"
+    y="1492"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text023"
+    class="svg-text"
+    onclick="on_svg_click('023')"
+>
+</text>
+
+<text
+    x="958"
+    y="4180"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text024"
+    class="svg-text"
+    onclick="on_svg_click('024')"
+>
+</text>
+
+<text
+    x="1025"
+    y="1732"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text025"
+    class="svg-text"
+    onclick="on_svg_click('025')"
+>
+</text>
+
+<text
+    x="1041"
+    y="1973"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text026"
+    class="svg-text"
+    onclick="on_svg_click('026')"
+>
+</text>
+
+<text
+    x="1058"
+    y="2213"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text027"
+    class="svg-text"
+    onclick="on_svg_click('027')"
+>
+</text>
+
+<text
+    x="1073"
+    y="2455"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text028"
+    class="svg-text"
+    onclick="on_svg_click('028')"
+>
+</text>
+
+<text
+    x="1090"
+    y="2695"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text029"
+    class="svg-text"
+    onclick="on_svg_click('029')"
+>
+</text>
+
+<text
+    x="1112"
+    y="3063"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text030"
+    class="svg-text"
+    onclick="on_svg_click('030')"
+>
+</text>
+
+<text
+    x="1049"
+    y="381"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text031"
+    class="svg-text"
+    onclick="on_svg_click('031')"
+>
+</text>
+
+<text
+    x="1106"
+    y="3526"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text032"
+    class="svg-text"
+    onclick="on_svg_click('032')"
+>
+</text>
+
+<text
+    x="1311"
+    y="4063"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text033"
+    class="svg-text"
+    onclick="on_svg_click('033')"
+>
+</text>
+
+<text
+    x="1304"
+    y="3483"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text034"
+    class="svg-text"
+    onclick="on_svg_click('034')"
+>
+</text>
+
+<text
+    x="1326"
+    y="381"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text035"
+    class="svg-text"
+    onclick="on_svg_click('035')"
+>
+</text>
+
+<text
+    x="1548"
+    y="975"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text036"
+    class="svg-text"
+    onclick="on_svg_click('036')"
+>
+</text>
+
+<text
+    x="1612"
+    y="381"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text037"
+    class="svg-text"
+    onclick="on_svg_click('037')"
+>
+</text>
+
+<text
+    x="1753"
+    y="3364"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text038"
+    class="svg-text"
+    onclick="on_svg_click('038')"
+>
+</text>
+
+<text
+    x="1847"
+    y="974"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text039"
+    class="svg-text"
+    onclick="on_svg_click('039')"
+>
+</text>
+
+<text
+    x="1897"
+    y="3946"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text040"
+    class="svg-text"
+    onclick="on_svg_click('040')"
+>
+</text>
+
+<text
+    x="1848"
+    y="381"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text041"
+    class="svg-text"
+    onclick="on_svg_click('041')"
+>
+</text>
+
+<text
+    x="1982"
+    y="3306"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text042"
+    class="svg-text"
+    onclick="on_svg_click('042')"
+>
+</text>
+
+<text
+    x="2125"
+    y="3887"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text043"
+    class="svg-text"
+    onclick="on_svg_click('043')"
+>
+</text>
+
+<text
+    x="2082"
+    y="973"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text044"
+    class="svg-text"
+    onclick="on_svg_click('044')"
+>
+</text>
+
+<text
+    x="2083"
+    y="381"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text045"
+    class="svg-text"
+    onclick="on_svg_click('045')"
+>
+</text>
+
+<text
+    x="2210"
+    y="3250"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text046"
+    class="svg-text"
+    onclick="on_svg_click('046')"
+>
+</text>
+
+<text
+    x="2356"
+    y="3829"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text047"
+    class="svg-text"
+    onclick="on_svg_click('047')"
+>
+</text>
+
+<text
+    x="2318"
+    y="972"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text048"
+    class="svg-text"
+    onclick="on_svg_click('048')"
+>
+</text>
+
+<text
+    x="2319"
+    y="381"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text049"
+    class="svg-text"
+    onclick="on_svg_click('049')"
+>
+</text>
+
+<text
+    x="2438"
+    y="3193"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text050"
+    class="svg-text"
+    onclick="on_svg_click('050')"
+>
+</text>
+
+<text
+    x="2585"
+    y="3771"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text051"
+    class="svg-text"
+    onclick="on_svg_click('051')"
+>
+</text>
+
+<text
+    x="2555"
+    y="381"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text052"
+    class="svg-text"
+    onclick="on_svg_click('052')"
+>
+</text>
+
+<text
+    x="2555"
+    y="971"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text053"
+    class="svg-text"
+    onclick="on_svg_click('053')"
+>
+</text>
+
+<text
+    x="2667"
+    y="3136"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text054"
+    class="svg-text"
+    onclick="on_svg_click('054')"
+>
+</text>
+
+<text
+    x="2814"
+    y="3713"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text055"
+    class="svg-text"
+    onclick="on_svg_click('055')"
+>
+</text>
+
+<text
+    x="2835"
+    y="970"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text056"
+    class="svg-text"
+    onclick="on_svg_click('056')"
+>
+</text>
+
+<text
+    x="2802"
+    y="381"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text057"
+    class="svg-text"
+    onclick="on_svg_click('057')"
+>
+</text>
+
+<text
+    x="2897"
+    y="3079"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text058"
+    class="svg-text"
+    onclick="on_svg_click('058')"
+>
+</text>
+
+<text
+    x="2928"
+    y="691"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text059"
+    class="svg-text"
+    onclick="on_svg_click('059')"
+>
+</text>
+
+<text
+    x="3041"
+    y="3656"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text060"
+    class="svg-text"
+    onclick="on_svg_click('060')"
+>
+</text>
+
+<text
+    x="3257"
+    y="1339"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text061"
+    class="svg-text"
+    onclick="on_svg_click('061')"
+>
+</text>
+
+<text
+    x="3125"
+    y="3022"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text062"
+    class="svg-text"
+    onclick="on_svg_click('062')"
+>
+</text>
+
+<text
+    x="3188"
+    y="613"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text063"
+    class="svg-text"
+    onclick="on_svg_click('063')"
+>
+</text>
+
+<text
+    x="3269"
+    y="3597"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text064"
+    class="svg-text"
+    onclick="on_svg_click('064')"
+>
+</text>
+
+<text
+    x="3433"
+    y="2946"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text065"
+    class="svg-text"
+    onclick="on_svg_click('065')"
+>
+</text>
+
+<text
+    x="3520"
+    y="3523"
+    font-size="50"
+    font-weight="bold"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    id="text066"
+    class="svg-text"
+    onclick="on_svg_click('066')"
+>
+</text>
+</svg>

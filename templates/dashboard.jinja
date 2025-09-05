@@ -2,8 +2,57 @@
 
 {% block head %}
   <title>Guerra del Faedo</title>
+
+  <link rel="stylesheet" href="/static/styles/dashboard.css">
+  <script src="/static/scripts/dashboard.js"></script>
 {% endblock %}
 
 {% block content %}
+  <div id="floor-buttons">
+    <button class="theme-button" onclick="redirect_to_floor('');">Generale</button>
+    <button class="theme-button" onclick="redirect_to_floor('-1');">Piano -1</button>
+    <button class="theme-button" onclick="redirect_to_floor('0');">Piano 0</button>
+    <button class="theme-button" onclick="redirect_to_floor('1');">Piano 1</button>
+    <button class="theme-button" onclick="redirect_to_floor('2');">Piano 2</button>
+    <button class="theme-button" onclick="redirect_to_floor('3');">Piano 3</button>
+  </div>
 
+  <div class="full-width-card" id="map-card">
+    {% if floor == "" %}
+      <div id="general-grid">
+        <div>
+          <div>
+            <h3>Piano -1</h3>
+            {% include "/res/svg/floor-1.svg" %}
+          </div>
+        </div>
+        <div>
+          <div>
+            <h3>Piano 0</h3>
+            {% include "/res/svg/floor0.svg" %}
+          </div>
+          <div>
+            <h3>Piano 2</h3>
+            {% include "/res/svg/floor2.svg" %}
+          </div>
+        </div>
+        <div>
+          <div>
+            <h3>Piano 1</h3>
+            {% include "/res/svg/floor1.svg" %}
+          </div>
+          <div>
+            <h3>Piano 3</h3>
+            {% include "/res/svg/floor3.svg" %}
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <h1>Piano {{floor}}</h1>
+
+      <div id="svg-wrapper">
+        {% include "/res/svg/floor" + (floor|string) + ".svg" %}
+      </div>
+    {% endif %}
+  </div>
 {% endblock %}
