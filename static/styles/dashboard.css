@@ -6,10 +6,18 @@ svg {
     width: 60%;
     height: auto;
     display: block;
+    user-select: none;
 }
 
 #general-grid svg {
     width: 90%;
+}
+
+.svg-text {
+    font-size: 80px;
+    font-weight: bold;
+    dominant-baseline: middle;
+    text-anchor: middle;
 }
 
 #floor-buttons {
