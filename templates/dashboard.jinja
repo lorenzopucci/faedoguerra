@@ -3,6 +3,8 @@
 {% block head %}
   <title>Guerra del Faedo</title>
 
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
   <link rel="stylesheet" href="/static/styles/dashboard.css">
   <script src="/static/scripts/dashboard.js"></script>
 {% endblock %}
@@ -55,4 +57,33 @@
       </div>
     {% endif %}
   </div>
+
+  <div class="full-width-card">
+    <h1>Classifica</h1>
+
+    <table id="ranking" class="theme-table">
+    <thead><tr>
+      <td>Posizione</td><td>Nome</td><td>Stanze in possesso</td>
+    </tr></thead>
+    <tbody>
+      {% for player in ranking %}
+        <tr>
+          <td>{{player.rank}}</td>
+          <td>
+            <span class="color-square" style="background-color:{{player.color}};"></span>
+            <a href="/player/{{player.id}}">{{player.full_name}}</a>
+            ({{player.university}})
+          </td>
+          <td>{{player.room_count}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+  </div>
+
+  <script>
+    window.onload = () => {
+      color_svg({{data | tojson}});
+    }
+  </script>
 {% endblock %}

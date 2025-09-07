@@ -13,6 +13,7 @@ def dashboard(request):
     return render(request, 'dashboard.jinja', {
         'floor': '',
         'data': fetch.get_all_floors_maps(),
+        'ranking': fetch.get_ranking(),
     })
 
 
@@ -23,6 +24,7 @@ def dashboard_floor(request, floor):
         return render(request, 'dashboard.jinja', {
             'floor': floor,
             'data': fetch.get_floor_map(int(floor)),
+            'ranking': fetch.get_ranking(),
         })
 
 

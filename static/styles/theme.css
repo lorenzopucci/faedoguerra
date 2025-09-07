@@ -164,17 +164,39 @@ a {
     padding: 5px 10px;
 }
 
-.data-grid > div:nth-child(2n + 1) {
+.data-grid > div:nth-child(2n + 1),
+.theme-table td:first-child {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
 }
 
-.data-grid > div:nth-child(2n) {
+.data-grid > div:nth-child(2n),
+.theme-table td:last-child {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
 
 .data-grid > div:nth-child(4n + 1),
-.data-grid > div:nth-child(4n + 2) {
+.data-grid > div:nth-child(4n + 2),
+.theme-table > tbody > tr:nth-child(odd) {
     background-color: rgb(240, 240, 240);
+}
+
+.theme-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.theme-table td {
+    padding: 5px 10px;
+}
+
+.theme-table td > * {
+    vertical-align: middle;
+}
+
+.theme-table thead {
+    text-align: left;
+    font-weight: bold;
+    font-size: large;
 }

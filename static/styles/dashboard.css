@@ -57,3 +57,10 @@ svg {
 #general-grid > div > div > * {
     margin: 2px auto;
 }
+
+.color-square {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+}
