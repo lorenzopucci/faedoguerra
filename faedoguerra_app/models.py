@@ -42,6 +42,7 @@ class Room(models.Model):
         validators.MinValueValidator(-1),
         validators.MaxValueValidator(+3),
     ], default = 0)
+    svg_id = models.SmallIntegerField(default = 0)
 
     owner = models.ForeignKey(Player, related_name = 'room', on_delete = models.PROTECT, null = True)
     current_owner = models.ForeignKey(Player, related_name = 'current_rooms', on_delete = models.PROTECT, null = True)
