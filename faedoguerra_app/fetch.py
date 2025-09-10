@@ -51,3 +51,41 @@ def get_ranking(count = 20):
         }
 
     return list(map(to_representation, enumerate(queryset)))
+
+
+def get_player(instance):
+    rooms_queryset = Room.objects.filter(current_owner = instance)
+
+    def to_room_representation(room):
+        return {
+            'id': room.id,
+            'tooltip': room.tooltip,
+        }
+
+    return {
+        'full_name': str(instance),
+        'university': instance.get_university_display(),
+        'own_room': to_room_representation(instance.room.all()[0]),
+        'rooms': list(map(to_room_representation, rooms_queryset)),
+        'rooms_count': len(rooms_queryset),
+    }
+
+
+def get_room(instance):
+
+    def to_player_representation(data):
+        if data == None:
+            return False
+        return {
+            'id': data.id,
+            'full_name': str(data),
+            'university': data.get_university_display(),
+        }
+
+    return {
+        'tooltip': instance.tooltip,
+        'floor': instance.floor,
+        'owner': to_player_representation(instance.owner),
+        'current_owner': to_player_representation(instance.current_owner),
+    }
+

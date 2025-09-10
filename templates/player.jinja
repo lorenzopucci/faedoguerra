@@ -1,0 +1,31 @@
+{% extends "base.jinja" %}
+
+{%- macro room_link(room) -%}
+  <a href="/room/{{room.id}}">{{room.tooltip}}</a>
+{%- endmacro -%}
+
+{% block head %}
+  <title>{{data.full_name}} - Guerra del Faedo</title>
+{% endblock %}
+
+{% block content %}
+  <div class="full-width-card">
+  <h2>{{data.full_name}}</h2>
+
+    <div class="data-grid">
+      <div>Scuola</div>
+      <div>{{data.university}}</div>
+
+      <div>Camera personale</div>
+      <div>{{room_link(data.own_room)}}</div>
+
+      <div>Stanze in possesso</div>
+      <div>
+        {% for room in data.rooms %}
+          {{room_link(room)}}
+          {%- if loop.index != data.rooms|length %}, {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

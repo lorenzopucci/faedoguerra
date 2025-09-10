@@ -1,0 +1,28 @@
+{% extends "base.jinja" %}
+
+{%- macro player_link(player) -%}
+  <a href="/player/{{player.id}}">{{player.full_name}}</a>
+{%- endmacro -%}
+
+{% block head %}
+  <title>{{data.tooltip}} - Guerra del Faedo</title>
+{% endblock %}
+
+{% block content %}
+  <div class="full-width-card">
+  <h2>{{data.tooltip}}</h2>
+
+    <div class="data-grid">
+      <div>Piano</div>
+      <div>{{data.floor}}</div>
+
+      {% if data.owner %}
+        <div>Proprietario</div>
+        <div>{{player_link(data.owner)}} ({{data.owner.university}})</div>
+      {% endif %}
+
+      <div>Possessore attuale</div>
+      <div>{{player_link(data.current_owner)}} ({{data.current_owner.university}})</div>
+    </div>
+  </div>
+{% endblock %}

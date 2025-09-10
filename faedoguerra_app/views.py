@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 
 from faedoguerra_app import fetch
+from faedoguerra_app.models import Player, Room
 
 
 def home(request):
@@ -30,6 +31,20 @@ def dashboard_floor(request, floor):
 
 def about(request):
     return render(request, 'about.jinja')
+
+
+def player(request, player_id):
+    instance = get_object_or_404(Player, id = player_id)
+    return render(request, 'player.jinja', {
+        'data': fetch.get_player(instance),
+    })
+
+
+def room(request, room_id):
+    instance = get_object_or_404(Room, id = room_id)
+    return render(request, 'room.jinja', {
+        'data': fetch.get_room(instance),
+    })
 
 
 @login_required

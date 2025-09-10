@@ -17,7 +17,6 @@ class UserAdmin(BaseUserAdmin):
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 
-admin.site.register(Player)
 admin.site.register(Room)
 admin.site.register(RoomConnection)
 admin.site.register(Event)
