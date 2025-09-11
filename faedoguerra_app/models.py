@@ -27,7 +27,10 @@ class Player(models.Model):
     color = ColorField(default = random_color)
 
     university = models.CharField(max_length = 1, choices = University.choices, default = 'n')
+
     telegram_handle = models.CharField(max_length = 50, blank = True)
+    telegram_chat_id = models.IntegerField(default = 0)
+
     eliminated = models.BooleanField(default = False)
 
     def __str__(self):
