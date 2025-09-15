@@ -17,6 +17,12 @@ class RoomType(models.TextChoices):
     LIFT = 'a', 'Ascensore'
 
 
+class AnnouncementType(models.TextChoices):
+    ATTACK = 'a', 'Attacco con difensore'
+    ATTACK_NO_DEFENDER = 'n', 'Attacco senza difensore'
+    ATTACK_ELIMINATION = 'e', 'Attacco con eliminazione'
+
+
 class Player(models.Model):
     user = models.OneToOneField(User, on_delete = models.PROTECT)
 
@@ -62,13 +68,33 @@ class RoomConnection(models.Model):
         return f'{str(self.room1)} -> {str(self.room2)}'
 
 
+class Announcement(models.Model):
+    type = models.CharField(max_length = 1, choices = AnnouncementType.choices)
+    string = models.CharField(max_length = 300)
+
+    def __str__(self):
+        return self.string
+
+
 class Event(models.Model):
     attacker = models.ForeignKey(Player, related_name = '+', on_delete = models.PROTECT)
     attacker_room = models.ForeignKey(Room, related_name = '+', on_delete = models.PROTECT)
-    target = models.ForeignKey(Player, related_name = '+', on_delete = models.PROTECT)
+
+    target = models.ForeignKey(Player, related_name = '+', on_delete = models.PROTECT, null = True)
     target_room = models.ForeignKey(Room, related_name = '+', on_delete = models.PROTECT)
 
     time = models.DateTimeField(auto_now_add = True)
     announced = models.BooleanField(default = False)
+    announcement = models.ForeignKey(Announcement, on_delete = models.PROTECT, null = True)
 
-    # add message text
+    @property
+    def filled_announcement(self):
+        return self.announcement.format(
+            attacker = str(self.attacker),
+            attacker_room = str(self.attacker_room),
+            target = str(self.target),
+            target_room = str(self.target_room),
+        )
+
+    def __str__(self):
+        return f"{self.time.strftime('%d/%m/%Y, %H:%M')} {self.attacker} -> {self.target_room}"

@@ -81,6 +81,21 @@
     </table>
   </div>
 
+  <div class="full-width-card">
+    <h1>Ultimi avvenimenti</h1>
+
+    <table class="theme-table">
+    <tbody>
+      {% for event in events %}
+        <tr>
+          <td>{{event.time}}</td>
+          <td>{{event.announcement | safe}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+  </div>
+
   <script>
     window.onload = () => {
       color_svg({{data | tojson}});

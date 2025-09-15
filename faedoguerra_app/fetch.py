@@ -1,6 +1,6 @@
-from django.db.models import Count
+from django.db.models import Count, Q
 
-from faedoguerra_app.models import Player, Room
+from faedoguerra_app.models import Player, Room, Event
 
 
 def get_floor_map(floor):
@@ -34,8 +34,9 @@ def get_all_floors_maps():
 
 def get_ranking(count = 20):
     queryset = Player.objects\
+        .filter(eliminated = False)\
         .annotate(room_count = Count('current_rooms'))\
-        .order_by('room_count', 'id')\
+        .order_by('-room_count', 'id')\
         [:count]
 
     def to_representation(arg):
@@ -53,8 +54,41 @@ def get_ranking(count = 20):
     return list(map(to_representation, enumerate(queryset)))
 
 
+def to_event_html_string(event):
+    return event.announcement.string.format(
+        attacker = f'<a href="/player/{event.attacker.id}">{event.attacker}</a>',
+        attacker_room = f'<a href="/room/{event.attacker_room.id}">{event.attacker_room}</a>',
+        target = f'<a href="/player/{event.target.id}">{event.target}</a>',
+        target_room = f'<a href="/room/{event.target_room.id}">{event.target_room}</a>',
+    )
+
+
+def get_events_from_queryset(queryset):
+    def to_representation(event):
+        return {
+            'time': event.time.strftime('%d/%m/%Y, %H:%M'),
+            'announcement': to_event_html_string(event)
+        }
+
+    return list(map(to_representation, queryset))
+
+
+def get_events(count = 20):
+    queryset = Event.objects\
+        .all()\
+        .order_by('-time')\
+        [:count]
+
+    return get_events_from_queryset(queryset)
+
+
 def get_player(instance):
     rooms_queryset = Room.objects.filter(current_owner = instance)
+
+    events_queryset = Event.objects\
+        .filter(Q(attacker = instance) | Q(target = instance))\
+        .order_by('-time')
+
 
     def to_room_representation(room):
         return {
@@ -68,10 +102,14 @@ def get_player(instance):
         'own_room': to_room_representation(instance.room.all()[0]),
         'rooms': list(map(to_room_representation, rooms_queryset)),
         'rooms_count': len(rooms_queryset),
+        'events': get_events_from_queryset(events_queryset),
     }
 
 
 def get_room(instance):
+    events_queryset = Event.objects\
+        .filter(target_room = instance)\
+        .order_by('-time')
 
     def to_player_representation(data):
         if data == None:
@@ -87,5 +125,6 @@ def get_room(instance):
         'floor': instance.floor,
         'owner': to_player_representation(instance.owner),
         'current_owner': to_player_representation(instance.current_owner),
+        'events': get_events_from_queryset(events_queryset),
     }
 

@@ -25,4 +25,21 @@
       <div>{{player_link(data.current_owner)}} ({{data.current_owner.university}})</div>
     </div>
   </div>
+
+  {% if data.events %}
+    <div class="full-width-card">
+      <h1>Cronologia</h1>
+
+      <table class="theme-table">
+      <tbody>
+        {% for event in data.events %}
+          <tr>
+            <td>{{event.time}}</td>
+            <td>{{event.announcement | safe}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+    </div>
+  {% endif %}
 {% endblock %}
