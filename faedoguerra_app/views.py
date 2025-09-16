@@ -15,6 +15,7 @@ def dashboard(request):
         'floor': '',
         'data': fetch.get_all_floors_maps(),
         'ranking': fetch.get_ranking(),
+        'university_stats': fetch.get_university_stats(),
         'events': fetch.get_events(),
     })
 
@@ -27,6 +28,7 @@ def dashboard_floor(request, floor):
             'floor': floor,
             'data': fetch.get_floor_map(int(floor)),
             'ranking': fetch.get_ranking(),
+            'university_stats': fetch.get_university_stats(),
             'events': fetch.get_events(),
         })
 

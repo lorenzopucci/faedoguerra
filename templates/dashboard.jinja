@@ -82,6 +82,18 @@
   </div>
 
   <div class="full-width-card">
+    <h1>Statistiche</h1>
+
+    <div id="university-stats-labels">
+      <span><span class="color-square" style="background-color:#00819D;"></span> SNS: {{university_stats.sns_percentage}}%</span>
+      <span><span class="color-square" style="background-color:#b40010;"></span> SSSUP: {{university_stats.sssup_percentage}}%</span>
+    </div>
+    <div>
+      <span id="sns-slider" style="width:{{university_stats.sns_percentage}}%;"></span><span id="sssup-slider" style="width:{{university_stats.sssup_percentage}}%;"></span>
+    </div>
+  </div>
+
+  <div class="full-width-card">
     <h1>Ultimi avvenimenti</h1>
 
     <table class="theme-table">

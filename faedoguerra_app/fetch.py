@@ -1,3 +1,5 @@
+import math
+
 from django.db.models import Count, Q
 
 from faedoguerra_app.models import Player, Room, Event
@@ -52,6 +54,26 @@ def get_ranking(count = 20):
         }
 
     return list(map(to_representation, enumerate(queryset)))
+
+
+def get_university_stats():
+    sns_count = Room.objects\
+        .filter(current_owner__university = 'n')\
+        .count()
+
+    sssup_count = Room.objects\
+        .filter(current_owner__university = 's')\
+        .count()
+
+    def round_down(x):
+        return str(math.floor(10 * x) / 10)
+
+    return {
+        'sns_count': sns_count,
+        'sssup_count': sssup_count,
+        'sns_percentage': round_down(100 * sns_count / (sns_count + sssup_count)),
+        'sssup_percentage': round_down(100 * sssup_count / (sns_count + sssup_count)),
+    }
 
 
 def to_event_html_string(event):

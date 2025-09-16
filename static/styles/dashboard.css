@@ -64,3 +64,30 @@ svg {
     height: 20px;
     border-radius: 8px;
 }
+
+#university-stats-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+#university-stats-labels > span > * {
+    vertical-align: middle;
+}
+
+#sns-slider, #sssup-slider {
+    display: inline-block;
+    height: 30px;
+    width: 50%;
+}
+
+#sns-slider {
+    background-color: #00819D;
+    border-radius: 8px 0 0 8px;
+}
+
+#sssup-slider {
+    background-color: #b40010;
+    border-radius: 0 8px 8px 0;
+}
