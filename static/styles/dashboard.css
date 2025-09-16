@@ -35,6 +35,10 @@ svg {
     text-anchor: middle;
 }
 
+.svg-clickable {
+    fill: transparent;
+}
+
 #floor-buttons {
     width: 100%;
     margin: 0 auto;
