@@ -1,5 +1,20 @@
 #page-wrapper {
     margin-top: 100px;
+    width: 1400px;
+}
+
+#top-columns {
+    display: grid;
+    grid-template-columns: 800px 600px;
+}
+
+#ranking-wrapper {
+    margin-top: 0;
+}
+
+#ranking-rooms-title {
+    max-width: 100px;
+    white-space: unset;
 }
 
 svg {
@@ -21,8 +36,10 @@ svg {
 }
 
 #floor-buttons {
+    width: 100%;
     margin: 0 auto;
     display: flex;
+    justify-content: center;
 }
 
 #floor-buttons > button {
@@ -90,4 +107,38 @@ svg {
 #sssup-slider {
     background-color: #b40010;
     border-radius: 0 8px 8px 0;
+}
+
+@media screen and (max-width: 1500px) {
+    #page-wrapper {
+        width: min(1000px, 95%);
+    }
+
+    #top-columns {
+        display: block;
+    }
+
+    #top-columns > * {
+        margin-left: 0;
+        margin-right: 0;
+        overflow: auto;
+    }
+
+    #ranking-wrapper {
+        margin-top: 20px;
+    }
+
+    #ranking-rooms-title {
+        max-width: unset;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    svg {
+        width: 80%;
+    }
+
+    .floor-label {
+        display: none;
+    }
 }

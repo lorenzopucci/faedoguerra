@@ -71,6 +71,14 @@ a {
     margin-bottom: 15px;
 }
 
+.columns-wrapper > div:first-child {
+    margin-right: 10px;
+}
+
+.columns-wrapper > div:last-child {
+    margin-left: 10px;
+}
+
 
 /********************************** Buttons ***********************************/
 
@@ -124,7 +132,7 @@ a {
     text-align: right;
 }
 
-.form > div > div > input,
+.form > div > div > input:not([type="checkbox"]),
 .form > div > div > select {
     width: 100%;
 }
@@ -151,6 +159,10 @@ a {
     height: 25px;
     background-color: white;
     box-sizing: border-box;
+}
+
+.form input[type="checkbox"] {
+    height: 20px;
 }
 
 /*********************************** Tables ***********************************/
@@ -199,4 +211,21 @@ a {
     text-align: left;
     font-weight: bold;
     font-size: large;
+}
+
+td.tight {
+    width: 1px;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 800px) {
+    #page-wrapper {
+        margin-top: 80px;
+    }
+    .full-width-card {
+        padding: 15px 15px;
+    }
+    .full-width-card > h1 {
+        font-size: x-large;
+    }
 }
