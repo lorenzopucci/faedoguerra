@@ -7,6 +7,10 @@ from faedoguerra_app.models import Player, Room, Event
 
 def get_floor_map(floor):
     queryset = Room.objects.filter(floor = floor)
+    events = Event.objects\
+        .exclude(announcement__type = 'o')\
+        .order_by('-id')\
+        [:1]
 
     def to_representation(instance):
         color = (255, 255, 255)
@@ -21,6 +25,7 @@ def get_floor_map(floor):
             'color': color,
             'label': instance.label,
             'tooltip': instance.tooltip,
+            'blink': len(events) > 0 and events[0].target_room == instance,
         }
 
     return list(map(to_representation, queryset))

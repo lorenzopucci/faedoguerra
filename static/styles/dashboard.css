@@ -39,6 +39,16 @@ svg {
     fill: transparent;
 }
 
+.svg-path.blinking {
+    animation: blinking_room 2s infinite;
+}
+
+@keyframes blinking_room {
+    0%   {filter: brightness(1);}
+    50%  {filter: brightness(1.4);}
+    100% {filter: brightness(1);}
+}
+
 #floor-buttons {
     width: 100%;
     margin: 0 auto;
@@ -47,7 +57,7 @@ svg {
 }
 
 #floor-buttons > button {
-    margin: 0 6px;
+    margin: 4px 6px 0 6px;
 }
 
 #svg-wrapper {

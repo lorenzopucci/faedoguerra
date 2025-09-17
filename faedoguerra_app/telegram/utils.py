@@ -19,3 +19,13 @@ def broadcast_message(text):
 
     for chat_id in chat_ids:
         send_message(chat_id, text)
+
+
+def broadcast_message_to_staff(text):
+    chat_ids = Player.objects\
+        .filter(user__is_staff = True)\
+        .filter(telegram_chat_id = ~0)\
+        .values_list('chat_id', flat = True)
+
+    for chat_id in chat_ids:
+        send_message(chat_id, text)
