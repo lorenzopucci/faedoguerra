@@ -37,6 +37,10 @@ def about(request):
     return render(request, 'about.jinja')
 
 
+def privacy_policy(request):
+    return render(request, 'privacy_policy.jinja')
+
+
 def player(request, player_id):
     instance = get_object_or_404(Player, id = player_id)
     return render(request, 'player.jinja', {
