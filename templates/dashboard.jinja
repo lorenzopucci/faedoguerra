@@ -87,15 +87,33 @@
     </div>
   </div>
 
-  <div class="full-width-card">
-    <h1>Statistiche</h1>
-
-    <div id="university-stats-labels">
-      <span><span class="color-square" style="background-color:#00819D;"></span> SNS: {{university_stats.sns_percentage}}%</span>
-      <span><span class="color-square" style="background-color:#b40010;"></span> SSSUP: {{university_stats.sssup_percentage}}%</span>
-    </div>
+  <div id="stats-columns-wrapper" class="columns-wrapper">
     <div>
-      <span id="sns-slider" style="width:{{university_stats.sns_percentage}}%;"></span><span id="sssup-slider" style="width:{{university_stats.sssup_percentage}}%;"></span>
+      <div class="full-width-card">
+        <h1>Statistiche</h1>
+
+        <div id="university-stats-labels">
+          <span><span class="color-square" style="background-color:#00819D;"></span> SNS: {{university_stats.sns_percentage}}%</span>
+          <span><span class="color-square" style="background-color:#b40010;"></span> SSSUP: {{university_stats.sssup_percentage}}%</span>
+        </div>
+        <div>
+          <span id="sns-slider" style="width:{{university_stats.sns_percentage}}%;"></span><span id="sssup-slider" style="width:{{university_stats.sssup_percentage}}%;"></span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="full-width-card">
+        <h1>Replay</h1>
+
+        <div class="replay-slider-wrapper">
+          <input type="range" min="0" max="{{replay_data | length}}" value="{{replay_data | length}}" id="replay-slider" oninput="playing = false; update_view(this.value);">
+        </div>
+
+        <div id="replay-button-wrapper">
+          <button class="theme-button" id="replay-button" onclick="replay();">Riproduci</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -117,6 +135,10 @@
   {% endif %}
 
   <script>
+    const replay_data = {{replay_data | tojson}};
+    var previous_pos = {{replay_data | length}};
+    var playing = false;
+
     window.onload = () => {
       color_svg({{data | tojson}});
     }

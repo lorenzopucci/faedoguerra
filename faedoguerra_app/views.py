@@ -17,6 +17,7 @@ def dashboard(request):
         'ranking': fetch.get_ranking(),
         'university_stats': fetch.get_university_stats(),
         'events': fetch.get_events(),
+        'replay_data': fetch.get_replay_data(),
     })
 
 
@@ -30,6 +31,7 @@ def dashboard_floor(request, floor):
             'ranking': fetch.get_ranking(),
             'university_stats': fetch.get_university_stats(),
             'events': fetch.get_events(),
+            'replay_data': fetch.get_replay_data(),
         })
 
 

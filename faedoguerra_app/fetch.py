@@ -5,6 +5,10 @@ from django.db.models import Count, Q
 from faedoguerra_app.models import Player, Room, Event
 
 
+def color_hex_to_tuple(color):
+    return tuple(bytes.fromhex(color[1:]))
+
+
 def get_floor_map(floor):
     queryset = Room.objects.filter(floor = floor)
     events = Event.objects\
@@ -16,7 +20,7 @@ def get_floor_map(floor):
         color = (255, 255, 255)
 
         if instance.current_owner != None:
-            color = tuple(bytes.fromhex(instance.current_owner.color[1:]))
+            color = color_hex_to_tuple(instance.current_owner.color)
 
         return {
             'id': instance.id,
@@ -107,6 +111,27 @@ def get_events(count = 20):
         [:count]
 
     return get_events_from_queryset(queryset)
+
+
+def get_replay_data():
+    queryset = Event.objects\
+        .exclude(announcement__type = 'o')\
+        .order_by('time')
+
+    def to_representation(instance):
+        target_color = (255, 255, 255)
+
+        if instance.target is not None:
+            target_color = color_hex_to_tuple(instance.target.color)
+
+        return {
+            'floor': instance.target_room.floor,
+            'svg_id': instance.target_room.svg_id,
+            'new_color': color_hex_to_tuple(instance.attacker.color),
+            'old_color': target_color,
+        }
+
+    return list(map(to_representation, queryset))
 
 
 def get_player(instance):

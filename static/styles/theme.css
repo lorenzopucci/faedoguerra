@@ -85,6 +85,16 @@ a {
     margin-bottom: 15px;
 }
 
+.columns-wrapper > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.columns-wrapper > div > .full-width-card {
+    flex: auto;
+}
+
 .columns-wrapper > div:first-child {
     margin-right: 10px;
 }

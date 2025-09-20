@@ -5,7 +5,7 @@
 
 #top-columns {
     display: grid;
-    grid-template-columns: 800px 600px;
+    grid-template-columns: 850px 550px;
 }
 
 #ranking-wrapper {
@@ -96,6 +96,11 @@ svg {
     border-radius: 8px;
 }
 
+#stats-columns-wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
 #university-stats-labels {
     display: flex;
     justify-content: space-between;
@@ -123,6 +128,24 @@ svg {
     border-radius: 0 8px 8px 0;
 }
 
+#replay-slider-wrapper {
+    width: 100%;
+}
+
+#replay-slider {
+    width: 100%;
+}
+
+#replay-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#replay-button {
+    margin-top: 8px;
+}
+
 @media screen and (max-width: 1500px) {
     #page-wrapper {
         width: min(1000px, 95%);
@@ -144,6 +167,18 @@ svg {
 
     #ranking-rooms-title {
         max-width: unset;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #stats-columns-wrapper {
+        display: block;
+    }
+
+    #stats-columns-wrapper > * {
+        margin-left: 0;
+        margin-right: 0;
+        overflow: auto;
     }
 }
 
