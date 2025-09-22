@@ -13,6 +13,7 @@ class University(models.TextChoices):
 
 class RoomType(models.TextChoices):
     ROOM = 'c', 'Camera'
+    COMMON_SPACE = 'm', 'Spazio comune'
     STAIRS = 's', 'Scale'
     LIFT = 'a', 'Ascensore'
 
@@ -55,10 +56,10 @@ class Room(models.Model):
     ], default = 0)
     svg_id = models.SmallIntegerField(default = 0)
 
-    owner = models.ForeignKey(Player, related_name = 'room', on_delete = models.PROTECT, null = True)
-    current_owner = models.ForeignKey(Player, related_name = 'current_rooms', on_delete = models.PROTECT, null = True)
+    owner = models.ForeignKey(Player, related_name = 'room', on_delete = models.PROTECT, blank = True, null = True)
+    current_owner = models.ForeignKey(Player, related_name = 'current_rooms', on_delete = models.PROTECT, blank = True, null = True)
 
-    locked = models.BooleanField(default = True)
+    locked = models.BooleanField(default = False)
 
     def __str__(self):
         return self.tooltip

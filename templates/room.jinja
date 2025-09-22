@@ -22,7 +22,11 @@
       {% endif %}
 
       <div>Possessore attuale</div>
-      <div>{{player_link(data.current_owner)}} ({{data.current_owner.university}})</div>
+      <div>
+        {% if data.current_owner %}
+          {{player_link(data.current_owner)}} ({{data.current_owner.university}})
+        {% endif %}
+      </div>
     </div>
   </div>
 
