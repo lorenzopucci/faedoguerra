@@ -85,7 +85,7 @@ class Event(models.Model):
     attacker = models.ForeignKey(Player, related_name = '+', on_delete = models.PROTECT)
     attacker_room = models.ForeignKey(Room, related_name = '+', on_delete = models.PROTECT)
 
-    target = models.ForeignKey(Player, related_name = '+', on_delete = models.PROTECT, null = True)
+    target = models.ForeignKey(Player, related_name = '+', on_delete = models.PROTECT, blank = True, null = True)
     target_room = models.ForeignKey(Room, related_name = '+', on_delete = models.PROTECT)
 
     time = models.DateTimeField(auto_now_add = True)

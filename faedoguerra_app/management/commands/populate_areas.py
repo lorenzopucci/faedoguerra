@@ -5,11 +5,15 @@ from faedoguerra_app.models import Room
 
 
 class Command(BaseCommand):
-    help = 'Populate the database from a areas.csv file.'
+    help = 'Populate the database with common spaces from a csv file.'
+
+
+    def add_arguments(self, parser):
+        parser.add_argument('filename', nargs = '?', default = 'areas.csv')
+
 
     def handle(self, *args, **options):
-
-        with open('areas.csv', 'r') as areas_file:
+        with open(options['filename'], 'r') as areas_file:
             for line in areas_file.read().splitlines():
                 data = line.split(',')
 

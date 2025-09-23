@@ -86,10 +86,14 @@ def get_university_stats():
 
 
 def to_event_html_string(event):
+    target = ''
+    if event.target is not None:
+        target = f'<a href="/player/{event.target.id}">{event.target}</a>'
+
     return event.announcement.string.format(
         attacker = f'<a href="/player/{event.attacker.id}">{event.attacker}</a>',
         attacker_room = f'<a href="/room/{event.attacker_room.id}">{event.attacker_room}</a>',
-        target = f'<a href="/player/{event.target.id}">{event.target}</a>',
+        target = target,
         target_room = f'<a href="/room/{event.target_room.id}">{event.target_room}</a>',
     )
 
