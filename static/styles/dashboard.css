@@ -1,52 +1,10 @@
 #page-wrapper {
-    margin-top: 100px;
     width: 1400px;
 }
 
 #top-columns {
     display: grid;
     grid-template-columns: 850px 550px;
-}
-
-#ranking-wrapper {
-    margin-top: 0;
-}
-
-#ranking-rooms-title {
-    max-width: 100px;
-    white-space: unset;
-}
-
-svg {
-    width: 60%;
-    height: auto;
-    display: block;
-    user-select: none;
-}
-
-#general-grid svg {
-    width: 90%;
-}
-
-.svg-text {
-    font-size: 90px;
-    font-weight: bold;
-    dominant-baseline: middle;
-    text-anchor: middle;
-}
-
-.svg-clickable {
-    fill: transparent;
-}
-
-.svg-path.blinking {
-    animation: blinking_room 2s infinite;
-}
-
-@keyframes blinking_room {
-    0%   {filter: brightness(1);}
-    50%  {filter: brightness(1.4);}
-    100% {filter: brightness(1);}
 }
 
 #floor-buttons {
@@ -58,12 +16,6 @@ svg {
 
 #floor-buttons > button {
     margin: 4px 6px 0 6px;
-}
-
-#svg-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 #general-grid {
@@ -87,6 +39,59 @@ svg {
 
 #general-grid > div > div > * {
     margin: 2px auto;
+}
+
+.floor-focused {
+    margin: 0 !important;
+}
+
+.floor-focused h3 {
+    font-size: xx-large;
+}
+
+svg {
+    width: 90%;
+    height: auto;
+    display: block;
+    user-select: none;
+}
+
+.floor-focused svg {
+    width: 60%;
+}
+
+.svg-text {
+    font-size: 90px;
+    font-weight: bold;
+    dominant-baseline: middle;
+    text-anchor: middle;
+}
+
+.svg-clickable {
+    fill: transparent;
+}
+
+.svg-path.blinking {
+    animation: blinking_room 2s infinite;
+}
+
+@keyframes blinking_room {
+    0%   {filter: brightness(1);}
+    50%  {filter: brightness(1.4);}
+    100% {filter: brightness(1);}
+}
+
+#ranking-wrapper {
+    margin-top: 0;
+}
+
+#ranking-wrapper > h1 {
+    margin-bottom: 5px;
+}
+
+#ranking-rooms-title {
+    max-width: 100px;
+    white-space: unset;
 }
 
 .color-square {

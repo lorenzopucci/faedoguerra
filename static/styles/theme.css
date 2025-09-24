@@ -18,7 +18,7 @@ body {
 #page-wrapper {
     width: min(95%, 1000px);
     height: fit-content;
-    margin: 120px auto 50px auto;
+    margin: 100px auto 50px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -13,51 +13,43 @@
   <div id="top-columns" class="columns-wrapper">
     <div>
       <div id="floor-buttons">
-        <button class="theme-button" onclick="redirect_to_floor('');">Generale</button>
-        <button class="theme-button" onclick="redirect_to_floor('-1');"><span class="floor-label">Piano</span> -1</button>
-        <button class="theme-button" onclick="redirect_to_floor('0');"><span class="floor-label">Piano</span> 0</button>
-        <button class="theme-button" onclick="redirect_to_floor('1');"><span class="floor-label">Piano</span> 1</button>
-        <button class="theme-button" onclick="redirect_to_floor('2');"><span class="floor-label">Piano</span> 2</button>
-        <button class="theme-button" onclick="redirect_to_floor('3');"><span class="floor-label">Piano</span> 3</button>
+        <button class="theme-button" onclick="window.location.hash = '';">Generale</button>
+        <button class="theme-button" onclick="window.location.hash = '-1';"><span class="floor-label">Piano</span> -1</button>
+        <button class="theme-button" onclick="window.location.hash = '0';"><span class="floor-label">Piano</span> 0</button>
+        <button class="theme-button" onclick="window.location.hash = '1';"><span class="floor-label">Piano</span> 1</button>
+        <button class="theme-button" onclick="window.location.hash = '2';"><span class="floor-label">Piano</span> 2</button>
+        <button class="theme-button" onclick="window.location.hash = '3';"><span class="floor-label">Piano</span> 3</button>
       </div>
 
       <div class="full-width-card" id="map-card">
-        {% if floor == "" %}
-          <div id="general-grid">
-            <div>
-              <div>
-                <h3>Piano -1</h3>
-                {% include "/res/svg/floor-1.svg" %}
-              </div>
-            </div>
-            <div>
-              <div>
-                <h3>Piano 0</h3>
-                {% include "/res/svg/floor0.svg" %}
-              </div>
-              <div>
-                <h3>Piano 2</h3>
-                {% include "/res/svg/floor2.svg" %}
-              </div>
-            </div>
-            <div>
-              <div>
-                <h3>Piano 1</h3>
-                {% include "/res/svg/floor1.svg" %}
-              </div>
-              <div>
-                <h3>Piano 3</h3>
-                {% include "/res/svg/floor3.svg" %}
-              </div>
+        <div id="general-grid">
+          <div>
+            <div class="floor-wrapper" id="floor-1-wrapper">
+              <h3>Piano -1</h3>
+              {% include "/res/svg/floor-1.svg" %}
             </div>
           </div>
-        {% else %}
-          <h1>Piano {{floor}}</h1>
-
-          <div id="svg-wrapper">
-            {% include "/res/svg/floor" + (floor|string) + ".svg" %}
+          <div>
+            <div class="floor-wrapper" id="floor0-wrapper">
+              <h3>Piano 0</h3>
+              {% include "/res/svg/floor0.svg" %}
+            </div>
+            <div class="floor-wrapper" id="floor2-wrapper">
+              <h3>Piano 2</h3>
+              {% include "/res/svg/floor2.svg" %}
+            </div>
           </div>
-        {% endif %}
+          <div>
+            <div class="floor-wrapper" id="floor1-wrapper">
+              <h3>Piano 1</h3>
+              {% include "/res/svg/floor1.svg" %}
+            </div>
+            <div class="floor-wrapper" id="floor3-wrapper">
+              <h3>Piano 3</h3>
+              {% include "/res/svg/floor3.svg" %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -140,6 +132,9 @@
     var playing = false;
 
     window.onload = () => {
+      window.addEventListener("hashchange", switch_view);
+      switch_view();
+
       color_svg({{data | tojson}});
     }
   </script>

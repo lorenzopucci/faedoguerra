@@ -22,15 +22,18 @@ def get_floor_map(floor):
         if instance.current_owner != None:
             color = color_hex_to_tuple(instance.current_owner.color)
 
-        return {
+        ret = {
             'id': instance.id,
             'floor': floor,
             'svg_id': instance.svg_id,
             'color': color,
             'label': instance.label,
             'tooltip': instance.tooltip,
-            'blink': len(events) > 0 and events[0].target_room == instance,
         }
+        if len(events) > 0 and events[0].target_room == instance:
+            ret['blink'] = True
+
+        return ret
 
     return list(map(to_representation, queryset))
 

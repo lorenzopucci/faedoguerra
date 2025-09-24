@@ -6,6 +6,31 @@ function on_svg_click(id) {
     window.location.href = `/room/${id}`;
 }
 
+function switch_view() {
+    floor = window.location.hash.split('#')[1];
+    if (window.location.hash == '') floor = '';
+
+    if (!['', '-1', '0', '1', '2', '3'].includes(floor)) return;
+
+    if (floor == '') {
+        document.querySelectorAll('.floor-wrapper').forEach(el => {
+            el.style.display = 'block';
+            el.classList.remove('floor-focused');
+        });
+        document.getElementById('general-grid').style.gridTemplateColumns = '30% 35% 35%';
+    }
+    else {
+        document.querySelectorAll('.floor-wrapper').forEach(el => {
+            el.style.display = 'none';
+        });
+        const wrapper = document.getElementById(`floor${floor}-wrapper`)
+        wrapper.style.display = 'block';
+        wrapper.classList.add('floor-focused');
+
+        document.getElementById('general-grid').style.gridTemplateColumns = 'auto auto auto';
+    }
+}
+
 function color_room(path, text, color) {
     path.style.fill = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
 
