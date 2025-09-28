@@ -19,6 +19,18 @@ def dashboard(request):
     })
 
 
+def ranking(request):
+    return render(request, 'ranking.jinja', {
+        'ranking': fetch.get_ranking(200, eliminated = True),
+    })
+
+
+def events(request):
+    return render(request, 'events.jinja', {
+        'events': fetch.get_events(1000),
+    })
+
+
 def about(request):
     return render(request, 'about.jinja')
 

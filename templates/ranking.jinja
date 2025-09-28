@@ -1,0 +1,32 @@
+{% extends "base.jinja" %}
+
+{% block head %}
+  <title>Classifica - Guerra del Faedo</title>
+
+  <link rel="stylesheet" href="/static/styles/ranking.css">
+{% endblock %}
+
+{% block content %}
+  <div class="full-width-card">
+    <h1>Classifica</h1>
+
+    <table id="ranking" class="theme-table">
+      <thead><tr>
+        <td class="tight">Posizione</td><td>Nome</td><td class="tight">Stanze in possesso</td>
+      </tr></thead>
+      <tbody>
+        {% for player in ranking %}
+          <tr>
+            <td class="tight">{{player.rank}}</td>
+            <td>
+              <span class="color-square" style="background-color:{{player.color}};"></span>
+              <a href="/player/{{player.id}}">{{player.full_name}}</a>
+              ({{player.university}})
+            </td>
+            <td class="tight">{{player.room_count}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

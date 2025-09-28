@@ -57,7 +57,7 @@ svg {
 }
 
 .floor-focused svg {
-    width: 60%;
+    width: 65%;
 }
 
 .svg-text {
@@ -141,14 +141,11 @@ svg {
     width: 100%;
 }
 
-#replay-button-wrapper {
+.button-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-#replay-button {
-    margin-top: 8px;
+    padding-top: 15px;
 }
 
 @media screen and (max-width: 1500px) {

@@ -1,7 +1,3 @@
-function redirect_to_floor(floor) {
-    window.location.href = `/dashboard/${floor}`;
-}
-
 function on_svg_click(id) {
     window.location.href = `/room/${id}`;
 }

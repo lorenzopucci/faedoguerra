@@ -75,6 +75,10 @@
           {% endfor %}
         </tbody>
         </table>
+
+        <div class="button-wrapper">
+          <button class="theme-button" onclick="window.location.href = '/ranking';">Mostra completa</button>
+        </div>
       </div>
     </div>
   </div>
@@ -102,8 +106,8 @@
           <input type="range" min="0" max="{{replay_data | length}}" value="{{replay_data | length}}" id="replay-slider" oninput="playing = false; update_view(this.value);">
         </div>
 
-        <div id="replay-button-wrapper">
-          <button class="theme-button" id="replay-button" onclick="replay();">Riproduci</button>
+        <div class="button-wrapper">
+          <button class="theme-button" onclick="replay();">Riproduci</button>
         </div>
       </div>
     </div>
@@ -123,6 +127,10 @@
         {% endfor %}
       </tbody>
       </table>
+
+      <div class="button-wrapper">
+        <button class="theme-button" onclick="window.location.href = '/events';">Mostra tutti</button>
+      </div>
     </div>
   {% endif %}
 

@@ -46,9 +46,13 @@ def get_all_floors_maps():
     return ret
 
 
-def get_ranking(count = 20):
-    queryset = Player.objects\
-        .filter(eliminated = False)\
+def get_ranking(count = 15, eliminated = False):
+    queryset = Player.objects.all()
+
+    if not eliminated:
+        queryset = queryset.exclude(eliminated = True)
+
+    queryset = queryset\
         .annotate(room_count = Count('current_rooms'))\
         .order_by('-room_count', 'id')\
         [:count]
@@ -111,7 +115,7 @@ def get_events_from_queryset(queryset):
     return list(map(to_representation, queryset))
 
 
-def get_events(count = 20):
+def get_events(count = 10):
     queryset = Event.objects\
         .all()\
         .order_by('-time')\
