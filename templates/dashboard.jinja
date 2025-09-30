@@ -61,7 +61,7 @@
         <thead><tr>
           <td class="tight">Posizione</td><td>Nome</td><td class="tight" id="ranking-rooms-title">Stanze in possesso</td>
         </tr></thead>
-        <tbody>
+        <tbody id="ranking-body">
           {% for player in ranking %}
             <tr>
               <td class="tight">{{player.rank}}</td>
@@ -89,11 +89,11 @@
         <h1>Statistiche</h1>
 
         <div id="university-stats-labels">
-          <span><span class="color-square" style="background-color:#00819D;"></span> SNS: {{university_stats.sns_percentage}}%</span>
-          <span><span class="color-square" style="background-color:#b40010;"></span> SSSUP: {{university_stats.sssup_percentage}}%</span>
+          <span><span class="color-square" style="background-color:#00819D;"></span><span id="sns-stats">SNS: {{university_stats.sns}}%</span></span>
+          <span><span class="color-square" style="background-color:#b40010;"></span><span id="sssup-stats">SSSUP: {{university_stats.sssup}}%</span></span>
         </div>
         <div>
-          <span id="sns-slider" style="width:{{university_stats.sns_percentage}}%;"></span><span id="sssup-slider" style="width:{{university_stats.sssup_percentage}}%;"></span>
+          <span id="sns-slider" style="width:{{university_stats.sns}}%;"></span><span id="sssup-slider" style="width:{{university_stats.sssup}}%;"></span>
         </div>
       </div>
     </div>
@@ -103,7 +103,7 @@
         <h1>Replay</h1>
 
         <div class="replay-slider-wrapper">
-          <input type="range" min="0" max="{{replay_data | length}}" value="{{replay_data | length}}" id="replay-slider" oninput="playing = false; update_view(this.value);">
+          <input type="range" min="0" max="{{events_count}}" value="{{events_count}}" id="replay-slider" oninput="playing = false; update_view(this.value);">
         </div>
 
         <div class="button-wrapper">
@@ -135,15 +135,16 @@
   {% endif %}
 
   <script>
-    const replay_data = {{replay_data | tojson}};
-    var previous_pos = {{replay_data | length}};
+    var previous_pos = 0;
     var playing = false;
+    var replay_data = null;
 
     window.onload = () => {
       window.addEventListener("hashchange", switch_view);
       switch_view();
 
-      color_svg({{data | tojson}});
+      color_svg({{svg_data | tojson}});
+      fetch_replay_data();
     }
   </script>
 {% endblock %}

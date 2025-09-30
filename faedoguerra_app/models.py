@@ -4,6 +4,7 @@ from random import randint
 from django.db import models
 from django.contrib.auth.models import User
 from django.core import validators
+from django.utils import timezone
 
 
 class University(models.TextChoices):
@@ -88,9 +89,14 @@ class Event(models.Model):
     target = models.ForeignKey(Player, related_name = '+', on_delete = models.PROTECT, blank = True, null = True)
     target_room = models.ForeignKey(Room, related_name = '+', on_delete = models.PROTECT)
 
-    time = models.DateTimeField(auto_now_add = True)
+    time = models.DateTimeField(blank = True)
     announced = models.BooleanField(default = False)
     announcement = models.ForeignKey(Announcement, on_delete = models.PROTECT, null = True)
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.time = timezone.now()
+        return super(Event, self).save(*args, **kwargs)
 
     @property
     def filled_announcement(self):

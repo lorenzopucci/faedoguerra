@@ -1,6 +1,7 @@
 import math
 
 from django.db.models import Count, Q
+from django.utils import timezone
 
 from faedoguerra_app.models import Player, Room, Event
 
@@ -72,6 +73,16 @@ def get_ranking(count = 15, eliminated = False):
     return list(map(to_representation, enumerate(queryset)))
 
 
+def to_university_percentages(sns_count, sssup_count):
+    def round_down(x):
+        return str(math.floor(10 * x) / 10)
+
+    return {
+        'sns': round_down(100 * sns_count / (sns_count + sssup_count)),
+        'sssup': round_down(100 * sssup_count / (sns_count + sssup_count)),
+    }
+
+
 def get_university_stats():
     sns_count = Room.objects\
         .filter(current_owner__university = 'n')\
@@ -84,12 +95,7 @@ def get_university_stats():
     def round_down(x):
         return str(math.floor(10 * x) / 10)
 
-    return {
-        'sns_count': sns_count,
-        'sssup_count': sssup_count,
-        'sns_percentage': round_down(100 * sns_count / (sns_count + sssup_count)),
-        'sssup_percentage': round_down(100 * sssup_count / (sns_count + sssup_count)),
-    }
+    return to_university_percentages(sns_count, sssup_count)
 
 
 def to_event_html_string(event):
@@ -106,9 +112,11 @@ def to_event_html_string(event):
 
 
 def get_events_from_queryset(queryset):
+    current_tz = timezone.get_current_timezone()
+
     def to_representation(event):
         return {
-            'time': event.time.strftime('%d/%m/%Y, %H:%M'),
+            'time': event.time.astimezone(current_tz).strftime('%d/%m/%Y, %H:%M'),
             'announcement': to_event_html_string(event)
         }
 
@@ -122,27 +130,6 @@ def get_events(count = 10):
         [:count]
 
     return get_events_from_queryset(queryset)
-
-
-def get_replay_data():
-    queryset = Event.objects\
-        .exclude(announcement__type = 'o')\
-        .order_by('time')
-
-    def to_representation(instance):
-        target_color = (255, 255, 255)
-
-        if instance.target is not None:
-            target_color = color_hex_to_tuple(instance.target.color)
-
-        return {
-            'floor': instance.target_room.floor,
-            'svg_id': instance.target_room.svg_id,
-            'new_color': color_hex_to_tuple(instance.attacker.color),
-            'old_color': target_color,
-        }
-
-    return list(map(to_representation, queryset))
 
 
 def get_player(instance):
@@ -191,3 +178,93 @@ def get_room(instance):
         'events': get_events_from_queryset(events_queryset),
     }
 
+
+def get_events_count():
+    return Event.objects.exclude(announcement__type = 'o').count()
+
+
+def get_replay_data(ranking_count = 15):
+    events = Event.objects\
+        .exclude(announcement__type = 'o')\
+        .order_by('time')
+
+
+    # details of the single update to apply to the map at each transition
+    def to_delta_representation(instance):
+        target_color = (255, 255, 255)
+
+        if instance.target is not None:
+            target_color = color_hex_to_tuple(instance.target.color)
+
+        return {
+            'floor': instance.target_room.floor,
+            'svg_id': instance.target_room.svg_id,
+            'new_color': color_hex_to_tuple(instance.attacker.color),
+            'old_color': target_color,
+        }
+
+
+    # annotate initial room count
+    players = Player.objects.all().annotate(room_count = Count('room'))
+
+    # {<player_instance>: <room_count>} to keep track of room counts
+    rooms_count = dict(zip(
+        players,
+        players.values_list('room_count', flat = True),
+    ))
+
+    sns_count = Room.objects.filter(owner__university = 'n').count()
+    sssup_count = Room.objects.filter(owner__university = 's').count()
+
+
+    def to_ranking_item(item_data):
+        instance, count = item_data
+
+        return {
+            'id': instance.id,
+            'full_name': str(instance),
+            'university': instance.get_university_display(),
+            'color': instance.color,
+            'count': count,
+        }
+
+    def generate_ranking():
+        sorted_data = sorted(rooms_count.items(), key = lambda x: (-x[1], x[0].id))
+        return list(map(to_ranking_item, sorted_data[:ranking_count]))
+
+
+    # rankings at all timespamps
+    ranking = [generate_ranking()]
+
+    #university stats at all timestamps
+    university_stats = [to_university_percentages(sns_count, sssup_count)]
+
+    for event in events:
+        rooms_count[event.attacker] += 1
+
+        if event.attacker.university == 'n':
+            sns_count += 1
+        else:
+            sssup_count += 1
+
+        if event.announcement.type == 'a':
+            rooms_count[event.target] -= 1
+
+        elif event.announcement.type == 'e':
+            del rooms_count[event.target]
+
+        if event.announcement.type in ['a', 'e']:
+            if event.target.university == 'n':
+                sns_count -= 1
+            else:
+                sssup_count -= 1
+
+        ranking.append(generate_ranking())
+        university_stats.append(to_university_percentages(sns_count, sssup_count))
+
+
+    return {
+        'ranking': ranking,
+        'university_stats': university_stats,
+        'deltas': list(map(to_delta_representation, events)),
+    }

@@ -2,6 +2,7 @@ function on_svg_click(id) {
     window.location.href = `/room/${id}`;
 }
 
+// change which floor is focused
 function switch_view() {
     floor = window.location.hash.split('#')[1];
     if (window.location.hash == '') floor = '';
@@ -53,27 +54,56 @@ function color_svg(data) {
     });
 }
 
+function fetch_replay_data() {
+    fetch('/replay-data').then(res => res.json()).then(res => {
+        replay_data = res;
+        previous_pos = res.deltas.length;
+    });
+}
+
+// move through timestamps
 function update_view(position) {
     if (position >= previous_pos) {
         for (var i = previous_pos; i < position; i++) {
-            var path = document.getElementById(`path${replay_data[i].floor}${replay_data[i].svg_id}`);
-            var text = document.getElementById(`text${replay_data[i].floor}${replay_data[i].svg_id}`);
+            var path = document.getElementById(`path${replay_data.deltas[i].floor}${replay_data.deltas[i].svg_id}`);
+            var text = document.getElementById(`text${replay_data.deltas[i].floor}${replay_data.deltas[i].svg_id}`);
             if (path != undefined) {
                 path.classList.remove('blinking');
-                color_room(path, text, replay_data[i].new_color);
+                color_room(path, text, replay_data.deltas[i].new_color);
             }
         }
     }
     else {
         for (var i = previous_pos - 1; i >= position; i--) {
-            var path = document.getElementById(`path${replay_data[i].floor}${replay_data[i].svg_id}`);
-            var text = document.getElementById(`text${replay_data[i].floor}${replay_data[i].svg_id}`);
+            var path = document.getElementById(`path${replay_data.deltas[i].floor}${replay_data.deltas[i].svg_id}`);
+            var text = document.getElementById(`text${replay_data.deltas[i].floor}${replay_data.deltas[i].svg_id}`);
             if (path != undefined) {
                 path.classList.remove('blinking');
-                color_room(path, text, replay_data[i].old_color);
+                color_room(path, text, replay_data.deltas[i].old_color);
             }
         }
     }
+
+    document.getElementById('sns-stats').innerHTML = `SNS: ${replay_data.university_stats[position].sns}%`;
+    document.getElementById('sssup-stats').innerHTML = `SSSUP: ${replay_data.university_stats[position].sssup}%`;
+    document.getElementById('sns-slider').style.width = `${replay_data.university_stats[position].sns}%`;
+    document.getElementById('sssup-slider').style.width = `${replay_data.university_stats[position].sssup}%`;
+
+    ranking = "";
+    replay_data.ranking[position].forEach((item, idx) => {
+        ranking += `
+            <tr>
+              <td class="tight">${idx + 1}</td>
+              <td>
+                <span class="color-square" style="background-color:${item.color};"></span>
+                <a href="/player/${item.id}">${item.full_name}</a> (${item.university})
+              </td>
+              <td class="tight">${item.count}</td>
+            </tr>
+        `;
+    });
+    document.getElementById('ranking-body').innerHTML = ranking;
+
     previous_pos = position;
 }
 
@@ -90,7 +120,7 @@ async function replay() {
     playing = true;
     update_view(0);
 
-    for (var i = 1; i <= replay_data.length; i++) {
+    for (var i = 1; i <= replay_data.deltas.length; i++) {
         await sleep(500);
 
         if (!playing) break;

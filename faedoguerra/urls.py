@@ -33,4 +33,5 @@ urlpatterns = [
     path('user/', views.user),
     path('player/<int:player_id>', views.player),
     path('room/<int:room_id>', views.room),
+    path('replay-data/', views.replay_data),
 ]

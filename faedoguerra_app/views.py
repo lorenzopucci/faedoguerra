@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 from faedoguerra_app import fetch
 from faedoguerra_app.models import Player, Room
@@ -11,11 +12,11 @@ def home(request):
 
 def dashboard(request):
     return render(request, 'dashboard.jinja', {
-        'data': fetch.get_all_floors_maps(),
+        'svg_data': fetch.get_all_floors_maps(),
         'ranking': fetch.get_ranking(),
         'university_stats': fetch.get_university_stats(),
         'events': fetch.get_events(),
-        'replay_data': fetch.get_replay_data(),
+        'events_count': fetch.get_events_count(),
     })
 
 
@@ -56,3 +57,7 @@ def room(request, room_id):
 @login_required
 def user(request):
     return render(request, 'user.jinja')
+
+
+def replay_data(request):
+    return JsonResponse(fetch.get_replay_data())
