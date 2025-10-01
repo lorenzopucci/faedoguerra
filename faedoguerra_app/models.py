@@ -62,6 +62,13 @@ class Room(models.Model):
 
     locked = models.BooleanField(default = False)
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields = ['floor', 'svg_id'], name = 'unique_svg_path'
+            )
+        ]
+
     def __str__(self):
         return self.tooltip
 
