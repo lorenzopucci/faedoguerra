@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.views.decorators.cache import cache_page
 
+from faedoguerra import settings
 from faedoguerra_app import fetch
 from faedoguerra_app.models import Player, Room
 
@@ -10,6 +12,7 @@ def home(request):
     return redirect('/dashboard')
 
 
+@cache_page(settings.CACHE_TIMEOUT)
 def dashboard(request):
     return render(request, 'dashboard.jinja', {
         'svg_data': fetch.get_all_floors_maps(),
@@ -20,26 +23,31 @@ def dashboard(request):
     })
 
 
+@cache_page(settings.CACHE_TIMEOUT)
 def ranking(request):
     return render(request, 'ranking.jinja', {
         'ranking': fetch.get_ranking(200, eliminated = True),
     })
 
 
+@cache_page(settings.CACHE_TIMEOUT)
 def events(request):
     return render(request, 'events.jinja', {
         'events': fetch.get_events(1000),
     })
 
 
+@cache_page(settings.CACHE_TIMEOUT)
 def about(request):
     return render(request, 'about.jinja')
 
 
+@cache_page(settings.CACHE_TIMEOUT)
 def privacy_policy(request):
     return render(request, 'privacy_policy.jinja')
 
 
+@cache_page(settings.CACHE_TIMEOUT)
 def player(request, player_id):
     instance = get_object_or_404(Player, id = player_id)
     return render(request, 'player.jinja', {
@@ -47,6 +55,7 @@ def player(request, player_id):
     })
 
 
+@cache_page(settings.CACHE_TIMEOUT)
 def room(request, room_id):
     instance = get_object_or_404(Room, id = room_id)
     return render(request, 'room.jinja', {
@@ -59,5 +68,6 @@ def user(request):
     return render(request, 'user.jinja')
 
 
+@cache_page(settings.CACHE_TIMEOUT)
 def replay_data(request):
     return JsonResponse(fetch.get_replay_data())

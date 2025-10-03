@@ -103,6 +103,18 @@ DATABASES = {
 }
 
 
+# Caching
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+        'LOCATION': f'{os.getenv("MEMCACHED_HOST")}:{os.getenv("MEMCACHED_PORT")}',
+    }
+}
+
+CACHE_TIMEOUT = 60 * 60 # seconds
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
