@@ -77,6 +77,12 @@ def to_university_percentages(sns_count, sssup_count):
     def round_down(x):
         return str(math.floor(10 * x) / 10)
 
+    if sns_count + sssup_count == 0:
+        return {
+            'sns': 0,
+            'sssup': 0,
+        }
+
     return {
         'sns': round_down(100 * sns_count / (sns_count + sssup_count)),
         'sssup': round_down(100 * sssup_count / (sns_count + sssup_count)),
