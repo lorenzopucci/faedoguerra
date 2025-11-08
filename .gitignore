@@ -1,5 +1,7 @@
-.env
-./faedoguerra_env/
+.env*
+!.env.example
+
+./venv/
 **/__pycache__/
 faedoguerra_app/migrations/*
 !faedoguerra_app/migrations/__init__.py

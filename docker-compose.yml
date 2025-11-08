@@ -1,61 +1,50 @@
 services:
- db:
-   image: postgres:17
-   environment:
-     POSTGRES_DB: ${DATABASE_NAME}
-     POSTGRES_USER: ${DATABASE_USER}
-     POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-   ports:
-     - "5433:5432" # expose on port 5433 to access from the outside and avoid conflicts
-   volumes:
-     - postgres_data:/var/lib/postgresql/data
-   env_file:
-     - .env
+  db:
+    image: postgres:17
+    container_name: faedoguerra-db
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "5433:5432" # expose on port 5433 to access from the outside and avoid conflicts
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
- cache:
-   container_name: faedoguerra-cache
-   image: memcached:latest
-   expose:
-     - 11211
-   command:
-     - '--memory-limit=1024'
+  cache:
+    container_name: faedoguerra-cache
+    image: memcached:latest
+    expose:
+      - 11211
 
- web:
-   build: .
-   container_name: faedoguerra-web
-   expose:
-     - 8000
-   depends_on:
-     - db
-     - cache
-   environment:
-     DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
-     DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS}
-     DEBUG: ${DEBUG}
+  web:
+    build: .
+    container_name: faedoguerra-web
+    expose:
+      - 8000
+    depends_on:
+      - db
+      - cache
+    env_file:
+      - .env.prod
+    environment:
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      MEMCACHED_HOST: cache
+      MEMCACHED_PORT: 11211
+    volumes:
+      - static_data:/app/staticfiles:z # :z solves some SElinux issues on Fedora
 
-     DATABASE_NAME: ${DATABASE_NAME}
-     DATABASE_USERNAME: ${DATABASE_USER}
-     DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-     DATABASE_HOST: db
-     DATABASE_PORT: 5432
-
-     MEMCACHED_HOST: cache
-     MEMCACHED_PORT: 11211
-   env_file:
-     - .env
-   volumes:
-     - static_data:/app/staticfiles:z # :z solves someSElinux issues on Fedora
-
- nginx:
-   container_name: nginx
-   build: ./nginx
-   ports:
-     - "80:80"
-   volumes:
-     - static_data:/app/staticfiles:z # same
-   depends_on:
-     - web
+  nginx:
+    container_name: faedoguerra-nginx
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - static_data:/app/staticfiles:z # same
+    depends_on:
+      - web
 
 volumes:
-   postgres_data:
-   static_data:
+  postgres_data:
+  static_data:

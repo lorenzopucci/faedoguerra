@@ -1,0 +1,15 @@
+/.git/
+/.gitignore
+/.github
+
+/.dockerignore
+/Dockerfile
+/docker-compose.yml
+
+**/__pycache__
+*.pyc
+
+/.env*
+/.editorconfig
+/venv
+/nginx

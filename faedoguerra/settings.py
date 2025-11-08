@@ -26,13 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-def str_to_bool(s):
-    return s in ('true', '1', 't', 'yes', 'y', True)
-
-DEBUG = str_to_bool(os.getenv('DEBUG', default = False))
-
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', default = '127.0.0.1').split(',')
+
+if os.getenv('DJANGO_ENV') == 'production':
+    DEBUG = False
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+else:
+    DEBUG = True
 
 
 # Application definition
