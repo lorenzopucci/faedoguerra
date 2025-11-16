@@ -10,7 +10,7 @@ class Command(BaseCommand):
 
 
     def add_arguments(self, parser):
-        parser.add_argument('filename', nargs = '?', default = 'rooms.csv')
+        parser.add_argument('filename', nargs = '?', default = 'data/rooms.txt')
         parser.add_argument('--fake', action = 'store_true', help = 'Create fake users')
 
 
@@ -32,6 +32,8 @@ class Command(BaseCommand):
                         tooltip = f'Camera {number}',
                         floor = data[0],
                         svg_id = data[1],
+                        x_coord = data[2],
+                        y_coord = data[3],
                     )
                     room.save()
 
@@ -40,23 +42,23 @@ class Command(BaseCommand):
                 # create fake user
                 if options['fake'] and len(data) >= 3 and len(data) < 5 and room_obj.owner is None:
                     data += [''] * 2
-                    data[3] = 'Anonimo'
-                    data[4] = number
+                    data[5] = 'Anonimo'
+                    data[6] = number
 
-                if len(data) < 5:
+                if len(data) < 7:
                     continue
 
-                if not User.objects.filter(first_name = data[3], last_name = data[4]):
-                    self.stdout.write(f'Creating user {data[3]} {data[4]}')
+                if not User.objects.filter(first_name = data[5], last_name = data[6]):
+                    self.stdout.write(f'Creating user {data[5]} {data[6]}')
 
-                    username = f'{data[3]} {data[4]}'.replace(' ', '_')
+                    username = f'{data[5]} {data[6]}'.replace(' ', '_')
                     user = User.objects.create_user(username, '', settings.FAKE_USER_PASSWORD)
 
-                    user.first_name = data[3]
-                    user.last_name = data[4]
+                    user.first_name = data[5]
+                    user.last_name = data[6]
                     user.save()
 
-                    player = Player(user = user, university = data[2])
+                    player = Player(user = user, university = data[4])
                     player.save()
 
                     room_obj.owner = player

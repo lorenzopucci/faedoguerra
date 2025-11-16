@@ -56,6 +56,8 @@ class Room(models.Model):
         validators.MaxValueValidator(+3),
     ], default = 0)
     svg_id = models.SmallIntegerField(default = 0)
+    x_coord = models.PositiveSmallIntegerField(default = 0)
+    y_coord = models.PositiveSmallIntegerField(default = 0)
 
     owner = models.ForeignKey(Player, related_name = 'room', on_delete = models.PROTECT, blank = True, null = True)
     current_owner = models.ForeignKey(Player, related_name = 'current_rooms', on_delete = models.PROTECT, blank = True, null = True)
@@ -71,14 +73,6 @@ class Room(models.Model):
 
     def __str__(self):
         return self.tooltip
-
-
-class RoomConnection(models.Model):
-    room1 = models.ForeignKey(Room, related_name = 'neighbours', on_delete = models.PROTECT)
-    room2 = models.ForeignKey(Room, related_name = '+', on_delete = models.PROTECT)
-
-    def __str__(self):
-        return f'{str(self.room1)} -> {str(self.room2)}'
 
 
 class Announcement(models.Model):

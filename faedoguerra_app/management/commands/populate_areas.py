@@ -9,7 +9,7 @@ class Command(BaseCommand):
 
 
     def add_arguments(self, parser):
-        parser.add_argument('filename', nargs = '?', default = 'areas.csv')
+        parser.add_argument('filename', nargs = '?', default = 'data/areas.txt')
 
 
     def handle(self, *args, **options):
@@ -24,11 +24,13 @@ class Command(BaseCommand):
                     self.stdout.write(f'Creating area "{data[4]}" at floor {data[0]} with svg_id {data[1]}')
 
                     room = Room(
-                        type = data[2],
-                        label = data[3],
-                        tooltip = data[4],
+                        type = data[4],
+                        label = data[5],
+                        tooltip = data[6],
                         floor = data[0],
                         svg_id = data[1],
+                        x_coord = data[2],
+                        y_coord = data[3],
                     )
                     room.save()
 
