@@ -12,13 +12,6 @@ class University(models.TextChoices):
     SSSUP = 's', 'SSSUP'
 
 
-class RoomType(models.TextChoices):
-    ROOM = 'c', 'Camera'
-    COMMON_SPACE = 'm', 'Spazio comune'
-    STAIRS = 's', 'Scale'
-    LIFT = 'a', 'Ascensore'
-
-
 class AnnouncementType(models.TextChoices):
     ATTACK = 'a', 'Attacco con difensore'
     ATTACK_NO_DEFENDER = 'n', 'Attacco senza difensore'
@@ -40,7 +33,6 @@ class Player(models.Model):
     telegram_handle = models.CharField(max_length = 50, blank = True)
     telegram_chat_id = models.IntegerField(default = 0)
 
-    paused = models.BooleanField(default = False)
     eliminated = models.BooleanField(default = False)
 
     def __str__(self):
@@ -48,7 +40,6 @@ class Player(models.Model):
 
 
 class Room(models.Model):
-    type = models.CharField(max_length = 1, choices = RoomType.choices, default = RoomType.ROOM)
     label = models.CharField(max_length = 20)
     tooltip = models.CharField(max_length = 30)
     floor = models.SmallIntegerField(validators = [
@@ -56,13 +47,9 @@ class Room(models.Model):
         validators.MaxValueValidator(+3),
     ], default = 0)
     svg_id = models.SmallIntegerField(default = 0)
-    x_coord = models.PositiveSmallIntegerField(default = 0)
-    y_coord = models.PositiveSmallIntegerField(default = 0)
 
     owner = models.ForeignKey(Player, related_name = 'room', on_delete = models.PROTECT, blank = True, null = True)
     current_owner = models.ForeignKey(Player, related_name = 'current_rooms', on_delete = models.PROTECT, blank = True, null = True)
-
-    locked = models.BooleanField(default = False)
 
     class Meta:
         constraints = [
@@ -85,7 +72,7 @@ class Announcement(models.Model):
 
 class Event(models.Model):
     attacker = models.ForeignKey(Player, related_name = '+', on_delete = models.PROTECT)
-    attacker_room = models.ForeignKey(Room, related_name = '+', on_delete = models.PROTECT)
+    attacker_room = models.ForeignKey(Room, related_name = '+', on_delete = models.PROTECT, blank = True, null = True)
 
     target = models.ForeignKey(Player, related_name = '+', on_delete = models.PROTECT, blank = True, null = True)
     target_room = models.ForeignKey(Room, related_name = '+', on_delete = models.PROTECT)
@@ -101,7 +88,7 @@ class Event(models.Model):
 
     @property
     def filled_announcement(self):
-        return self.announcement.format(
+        return self.announcement.string.format(
             attacker = str(self.attacker),
             attacker_room = str(self.attacker_room),
             target = str(self.target),

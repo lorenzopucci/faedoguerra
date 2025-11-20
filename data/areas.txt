@@ -9,9 +9,9 @@
 2,34,1300,3443,s,SC,Scale Nord 2
 3,11,972,2800,s,SC,Scale Nord 3
 -1,5,515,1568,m,MUS,Sala musica
--1,4,570,1160,m,VID,Sala videogiochi
+-1,4,570,1160,m,TV,Sala TV
 -1,7,901,684,m,PRO,Sala proiettore
--1,6,490,380,m,RIP,Ripostiglio proiettore
+-1,6,490,380,m,MAG,Magazzino proiettore
 -1,13,1521,346,m,SUB,Sala subotto
 -1,11,1951,1008,m,CORTILE,Cortile
 -1,9,756,2580,m,BAG,Bagno piano -1
@@ -31,7 +31,7 @@
 1,66,3265,1326,s,SC,Scale Sud 1
 1,22,1076,1005,s,SC,Scale Est 1
 2,3,383,292,m,CUC,Cucina piano 2
-2,35,1551,458,m,LAV,Lavanderia
+2,35,1551,458,m,LAV,Lavanderia piano 2
 2,42,2666,527,m,STUD,Sala studio
 2,36,2295,1056,m,TERR,Terrazza lavanderia
 2,54,3265,1375,s,SC,Scale Sud 2
@@ -41,7 +41,6 @@
 3,29,3139,2259,m,CUC,Cucina piano 3
 3,30,3200,2862,s,SC,Scale Ovest 3
 3,6,620,1825,m,STD,Sala stendini
-3,12,1960,416,m,TETTO,Tetto
 0,56,2835,970,m,LAV,Lavanderia piano 0
 0,3,386,312,m,UFF,Ufficio di Cordoni
 1,15,634,4235,m,PUL,Stanzino delle pulizie
