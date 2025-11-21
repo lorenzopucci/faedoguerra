@@ -1,0 +1,14 @@
+a|{attacker} ha sottratto {target_room} a {target}, approfittando di un momento di distrazione.
+a|{attacker} ha conquistato {target_room}, precedentemente di {target}.
+a|{target} ha ceduto {target_room} a {attacker} in cambio di un pacco di Gocciole.
+a|{target} ha ceduto {target_room} a {attacker} in cambio di 6 CFU.
+
+n|{attacker} ha conquistato {target_room}.
+n|{target_room} passa sotto il controllo di {attacker}.
+n|Su {target_room} sventola ora la bandiera di {attacker}.
+
+e|Siamo desolati, ma {target} ci deve lasciare.
+e|{target} ha perso il suo ultimo baluardo al Faedo.
+e|Per fortuna di {target}, i ponti di Pisa sono piuttosto comodi.
+e|{target} abbandona il Faedo con la coda fra le gambe.
+e|Nessuno ha più notizie di {target}.

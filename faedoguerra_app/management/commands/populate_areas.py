@@ -29,8 +29,6 @@ class Command(BaseCommand):
                         tooltip = data[6],
                         floor = data[0],
                         svg_id = data[1],
-                        x_coord = data[2],
-                        y_coord = data[3],
                     )
                     room.save()
 

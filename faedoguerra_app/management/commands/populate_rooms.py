@@ -32,8 +32,6 @@ class Command(BaseCommand):
                         tooltip = f'Camera {number}',
                         floor = data[0],
                         svg_id = data[1],
-                        x_coord = data[2],
-                        y_coord = data[3],
                     )
                     room.save()
 
