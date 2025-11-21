@@ -53,22 +53,34 @@ function color_room(path, text, color) {
     text.style.fill = (luminance < 150) ? "white" : "black";
 }
 
+function init_room(room) {
+    var path = document.getElementById(`path${room.floor}${room.svg_id}`);
+    var text = document.getElementById(`text${room.floor}${room.svg_id}`);
+    var clickable = document.getElementById(`clickable${room.floor}${room.svg_id}`);
+
+    color_room(path, text, room.color);
+    if (room.blink) path.classList.add('blinking');
+
+    clickable.onclick = () => on_svg_click(room.id);
+    text.textContent = room.label;
+
+    tippy(`#clickable${room.floor}${room.svg_id}`, {
+        content: room.tooltip,
+        placement: 'top',
+    });
+}
+
 function color_svg(data) {
     data.forEach((room) => {
-        var path = document.getElementById(`path${room.floor}${room.svg_id}`);
-        var text = document.getElementById(`text${room.floor}${room.svg_id}`);
-        var clickable = document.getElementById(`clickable${room.floor}${room.svg_id}`);
+        init_room(room);
 
-        color_room(path, text, room.color);
-        if (room.blink) path.classList.add('blinking');
-
-        clickable.onclick = () => on_svg_click(room.id);
-        text.textContent = room.label;
-
-        tippy(`#clickable${room.floor}${room.svg_id}`, {
-            content: room.tooltip,
-            placement: 'top',
-        });
+        if (room.floor == 0 && room.svg_id == 32) {
+            [[-1, 8], [1, 32], [2, 32], [3, 9]].forEach(vec => {
+                room.floor = vec[0];
+                room.svg_id = vec[1];
+                init_room(room);
+            });
+        }
     });
 }
 
@@ -79,25 +91,55 @@ function fetch_replay_data() {
     });
 }
 
+function to_new_color(delta, floor, svg_id) {
+    if (!floor) floor = delta.floor;
+    if (!svg_id) svg_id = delta.svg_id;
+
+    var path = document.getElementById(`path${floor}${svg_id}`);
+    var text = document.getElementById(`text${floor}${svg_id}`);
+    if (path != undefined) {
+        path.classList.remove('blinking');
+        color_room(path, text, delta.new_color);
+    }
+}
+
+function to_old_color(delta, floor, svg_id) {
+    if (!floor) floor = delta.floor;
+    if (!svg_id) svg_id = delta.svg_id;
+
+    var path = document.getElementById(`path${floor}${svg_id}`);
+    var text = document.getElementById(`text${floor}${svg_id}`);
+    if (path != undefined) {
+        path.classList.remove('blinking');
+        color_room(path, text, delta.old_color);
+    }
+}
+
 // move through timestamps
 function update_view(position) {
+    position = parseInt(position);
+
     if (position >= previous_pos) {
         for (var i = previous_pos; i < position; i++) {
-            var path = document.getElementById(`path${replay_data.deltas[i].floor}${replay_data.deltas[i].svg_id}`);
-            var text = document.getElementById(`text${replay_data.deltas[i].floor}${replay_data.deltas[i].svg_id}`);
-            if (path != undefined) {
-                path.classList.remove('blinking');
-                color_room(path, text, replay_data.deltas[i].new_color);
+            var delta = replay_data.deltas[i];
+            to_new_color(delta);
+
+            if (delta.floor == 0 && delta.svg_id == 32) {
+                [[-1, 8], [1, 32], [2, 32], [3, 9]].forEach(vec => {
+                    to_new_color(delta, vec[0], vec[1]);
+                });
             }
         }
     }
     else {
         for (var i = previous_pos - 1; i >= position; i--) {
-            var path = document.getElementById(`path${replay_data.deltas[i].floor}${replay_data.deltas[i].svg_id}`);
-            var text = document.getElementById(`text${replay_data.deltas[i].floor}${replay_data.deltas[i].svg_id}`);
-            if (path != undefined) {
-                path.classList.remove('blinking');
-                color_room(path, text, replay_data.deltas[i].old_color);
+            var delta = replay_data.deltas[i];
+            to_old_color(delta);
+
+            if (delta.floor == 0 && delta.svg_id == 32) {
+                [[-1, 8], [1, 32], [2, 32], [3, 9]].forEach(vec => {
+                    to_old_color(delta, vec[0], vec[1]);
+                });
             }
         }
     }

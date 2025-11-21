@@ -1,8 +1,4 @@
--1,8,492,2029,a,AS,Ascensore (piano -1)
-0,32,1106,3526,a,AS,Ascensore (piano terra)
-1,32,1113,3526,a,AS,Ascensore (primo piano)
-2,32,1113,3511,a,AS,Ascensore (secondo piano)
-3,9,782,2865,a,AS,Ascensore (terzo piano)
+0,32,1106,3526,a,AS,Ascensore
 -1,10,668,1981,s,SC,Scale Nord (piano -1)
 0,34,1304,3483,s,SC,Scale Nord (piano terra)
 1,34,1301,3458,s,SC,Scale Nord (primo piano)
