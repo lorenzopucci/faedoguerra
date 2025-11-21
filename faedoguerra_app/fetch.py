@@ -138,6 +138,13 @@ def get_events(count = 10):
     return get_events_from_queryset(queryset)
 
 
+def get_floor_to_focus():
+    if Event.objects.all():
+        return Event.objects.last().target_room.floor
+    else:
+        return 0
+
+
 def get_player(instance):
     rooms_queryset = Room.objects.filter(current_owner = instance)
 

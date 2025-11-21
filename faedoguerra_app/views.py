@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.views.decorators.cache import cache_page
+from django.views.decorators.clickjacking import xframe_options_exempt
 
 from faedoguerra import settings
 from faedoguerra_app import fetch
@@ -13,6 +14,7 @@ def home(request):
 
 
 @cache_page(settings.CACHE_TIMEOUT)
+@xframe_options_exempt
 def dashboard(request):
     return render(request, 'dashboard.jinja', {
         'svg_data': fetch.get_all_floors_maps(),
@@ -20,6 +22,7 @@ def dashboard(request):
         'university_stats': fetch.get_university_stats(),
         'events': fetch.get_events(),
         'events_count': fetch.get_events_count(),
+        'floor_to_focus': fetch.get_floor_to_focus(),
     })
 
 

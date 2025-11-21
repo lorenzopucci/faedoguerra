@@ -138,6 +138,10 @@
     var previous_pos = 0;
     var playing = false;
     var replay_data = null;
+    var floor_to_focus = {{floor_to_focus}};
+    {% if events %}
+    const last_event = '{{events[0].announcement | safe}}';
+    {% endif %}
 
     window.onload = () => {
       window.addEventListener("hashchange", switch_view);
@@ -145,6 +149,8 @@
 
       color_svg({{svg_data | tojson}});
       fetch_replay_data();
+
+      setInterval(post_embed_message, 10000);
     }
   </script>
 {% endblock %}

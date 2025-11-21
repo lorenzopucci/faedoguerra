@@ -6,8 +6,11 @@ function on_svg_click(id) {
 function switch_view() {
     floor = window.location.hash.split('#')[1];
     if (window.location.hash == '') floor = '';
+    const url_params = new URLSearchParams(window.location.search);
 
     if (!['', '-1', '0', '1', '2', '3'].includes(floor)) return;
+
+    if (url_params.get('embed') && floor == '') floor = floor_to_focus.toString();
 
     if (floor == '') {
         document.querySelectorAll('.floor-wrapper').forEach(el => {
@@ -25,6 +28,21 @@ function switch_view() {
         wrapper.classList.add('floor-focused');
 
         document.getElementById('general-grid').style.gridTemplateColumns = 'auto auto auto';
+    }
+
+    if (url_params.get('embed')) {
+        const map = document.getElementById('map-card').innerHTML;
+        const ranking = document.getElementById('ranking-wrapper').innerHTML;
+
+        document.body.innerHTML = '';
+        if (last_event) document.body.innerHTML = `<div class="full-width-card">${last_event}</div>`;
+
+        document.body.innerHTML += `
+            <div class="full-width-card" id="map-card">${map}</div>
+            <div class="full-width-card" id="ranking-wrapper">${ranking}</div>
+        `;
+        document.body.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        document.body.classList.add('embedded-page');
     }
 }
 
@@ -129,4 +147,12 @@ async function replay() {
     }
 
     playing = false;
+}
+
+// needed when this page is embedded into another. Tells the parent page to
+// adjust the iframe's height
+function post_embed_message() {
+    if (window.parent) {
+        window.parent.postMessage({iframe_height: document.body.scrollHeight}, '*');
+    }
 }

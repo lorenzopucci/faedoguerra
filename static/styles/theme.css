@@ -54,7 +54,7 @@ a {
     font-size: x-large;
 }
 
-.paragraph ul {
+.paragraph ul, .paragraph ol {
     list-style-position: inside;
 }
 
@@ -215,7 +215,7 @@ a {
 .data-grid > div:nth-child(4n + 1),
 .data-grid > div:nth-child(4n + 2),
 .theme-table > tbody > tr:nth-child(odd) {
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(245, 245, 245);
 }
 
 .theme-table {

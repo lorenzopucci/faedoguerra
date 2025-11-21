@@ -133,6 +133,10 @@ svg {
     border-radius: 0 8px 8px 0;
 }
 
+#sns-stats, #sssup-stats {
+    margin: 0 3px;
+}
+
 #replay-slider-wrapper {
     width: 100%;
 }
@@ -186,10 +190,31 @@ svg {
 
 @media screen and (max-width: 800px) {
     svg {
-        width: 80%;
+        width: 95%;
     }
-
+    .floor-focused svg {
+        width: 85%;
+    }
     .floor-label {
         display: none;
     }
+}
+
+.embedded-page .full-width-card {
+    margin: 5px 0 !important;
+}
+.embedded-page svg {
+    width: 40% !important;
+}
+.embedded-page .floor-focused h3 {
+    font-size: x-large;
+}
+.embedded-page #ranking-wrapper > h1 {
+    margin-bottom: 0;
+}
+.embedded-page #ranking-body > tr:nth-child(n+7) {
+    display: none;
+}
+.embedded-page .button-wrapper {
+    display: none;
 }
