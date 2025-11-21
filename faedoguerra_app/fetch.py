@@ -73,19 +73,22 @@ def get_ranking(count = 15, eliminated = False):
     return list(map(to_representation, enumerate(queryset)))
 
 
-def to_university_percentages(sns_count, sssup_count):
+def to_university_percentages(sns_count, sssup_count, other_count):
     def round_down(x):
         return str(math.floor(10 * x) / 10)
 
-    if sns_count + sssup_count == 0:
+    total = sns_count + sssup_count + other_count
+    if total == 0:
         return {
             'sns': 0,
             'sssup': 0,
+            'other': 0,
         }
 
     return {
-        'sns': round_down(100 * sns_count / (sns_count + sssup_count)),
-        'sssup': round_down(100 * sssup_count / (sns_count + sssup_count)),
+        'sns': round_down(100 * sns_count / total),
+        'sssup': round_down(100 * sssup_count / total),
+        'other': round_down(100 * other_count / total),
     }
 
 
@@ -98,10 +101,11 @@ def get_university_stats():
         .filter(current_owner__university = 's')\
         .count()
 
-    def round_down(x):
-        return str(math.floor(10 * x) / 10)
+    other_count = Room.objects\
+        .filter(current_owner__university = 'e')\
+        .count()
 
-    return to_university_percentages(sns_count, sssup_count)
+    return to_university_percentages(sns_count, sssup_count, other_count)
 
 
 def to_event_html_string(event):
@@ -233,6 +237,7 @@ def get_replay_data(ranking_count = 15):
 
     sns_count = Room.objects.filter(owner__university = 'n').count()
     sssup_count = Room.objects.filter(owner__university = 's').count()
+    other_count = Room.objects.filter(owner__university = 'e').count()
 
 
     def to_ranking_item(item_data):
@@ -255,15 +260,17 @@ def get_replay_data(ranking_count = 15):
     ranking = [generate_ranking()]
 
     #university stats at all timestamps
-    university_stats = [to_university_percentages(sns_count, sssup_count)]
+    university_stats = [to_university_percentages(sns_count, sssup_count, other_count)]
 
     for event in events:
         rooms_count[event.attacker] += 1
 
         if event.attacker.university == 'n':
             sns_count += 1
-        else:
+        elif event.attacker.university == 's':
             sssup_count += 1
+        else:
+            other_count += 1
 
         if event.announcement.type == 'a':
             rooms_count[event.target] -= 1
@@ -274,11 +281,13 @@ def get_replay_data(ranking_count = 15):
         if event.announcement.type in ['a', 'e']:
             if event.target.university == 'n':
                 sns_count -= 1
-            else:
+            elif event.target.university == 's':
                 sssup_count -= 1
+            else:
+                other_count -= 1
 
         ranking.append(generate_ranking())
-        university_stats.append(to_university_percentages(sns_count, sssup_count))
+        university_stats.append(to_university_percentages(sns_count, sssup_count, other_count))
 
 
     return {

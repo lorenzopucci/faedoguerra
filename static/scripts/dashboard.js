@@ -146,8 +146,10 @@ function update_view(position) {
 
     document.getElementById('sns-stats').innerHTML = `SNS: ${replay_data.university_stats[position].sns}%`;
     document.getElementById('sssup-stats').innerHTML = `SSSUP: ${replay_data.university_stats[position].sssup}%`;
+    document.getElementById('other-stats').innerHTML = `Esterni: ${replay_data.university_stats[position].other}%`;
     document.getElementById('sns-slider').style.width = `${replay_data.university_stats[position].sns}%`;
     document.getElementById('sssup-slider').style.width = `${replay_data.university_stats[position].sssup}%`;
+    document.getElementById('other-slider').style.width = `${replay_data.university_stats[position].other}%`;
 
     ranking = "";
     replay_data.ranking[position].forEach((item, idx) => {

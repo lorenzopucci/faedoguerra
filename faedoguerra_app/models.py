@@ -10,6 +10,7 @@ from django.utils import timezone
 class University(models.TextChoices):
     SNS = 'n', 'SNS'
     SSSUP = 's', 'SSSUP'
+    OTHER = 'e', 'Esterno'
 
 
 class AnnouncementType(models.TextChoices):

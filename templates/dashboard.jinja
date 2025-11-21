@@ -90,10 +90,11 @@
 
         <div id="university-stats-labels">
           <span><span class="color-square" style="background-color:#00819D;"></span><span id="sns-stats">SNS: {{university_stats.sns}}%</span></span>
+          <span><span class="color-square" style="background-color:#ffd54b;"></span><span id="other-stats">Esterni: {{university_stats.other}}%</span></span>
           <span><span class="color-square" style="background-color:#b40010;"></span><span id="sssup-stats">SSSUP: {{university_stats.sssup}}%</span></span>
         </div>
-        <div>
-          <span id="sns-slider" style="width:{{university_stats.sns}}%;"></span><span id="sssup-slider" style="width:{{university_stats.sssup}}%;"></span>
+        <div id="university-sliders-wrapper">
+          <span id="sns-slider" style="width:{{university_stats.sns}}%;"></span><span id="other-slider" style="width:{{university_stats.other}}%;"></span><span id="sssup-slider" style="width:{{university_stats.sssup}}%;"></span>
         </div>
       </div>
     </div>

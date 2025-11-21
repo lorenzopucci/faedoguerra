@@ -113,11 +113,15 @@ svg {
     vertical-align: middle;
 }
 
+#sns-stats, #sssup-stats, #other-stats {
+    margin: 0 3px;
+}
+
 #university-stats-labels > span > * {
     vertical-align: middle;
 }
 
-#sns-slider, #sssup-slider {
+#university-sliders-wrapper > span {
     display: inline-block;
     height: 30px;
     width: 50%;
@@ -133,8 +137,8 @@ svg {
     border-radius: 0 8px 8px 0;
 }
 
-#sns-stats, #sssup-stats {
-    margin: 0 3px;
+#other-slider {
+    background-color: #ffd54b;
 }
 
 #replay-slider-wrapper {
